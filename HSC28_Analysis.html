@@ -94,6 +94,7 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 .unit-col.building { color: #63b3ed; }  /* steel blue — structures */
 .unit-col.upgrade { color: #68d391; }   /* mint green — research / upgrades */
 .unit-col.unit { color: #f6ad55; }      /* amber — units & workers */
+.unit-col.ability { color: #b794f4; }   /* violet — ability usages */
 
 /* ── Build color legend ── */
 .build-legend { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.75rem; font-size: 0.78rem; font-family: 'Cascadia Code', 'Consolas', monospace; }
@@ -102,6 +103,7 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 .legend-unit { background: #f6ad55; }
 .legend-building { background: #63b3ed; }
 .legend-upgrade { background: #68d391; }
+.legend-ability { background: #b794f4; }
 
 /* ── Tags ── */
 .tag { display: inline-block; font-size: 0.68rem; font-weight: 700; padding: 1px 7px;
@@ -162,6 +164,7 @@ details[open] > summary .expand-btn::after { content: '▲'; }
     <div class="legend-item"><span class="legend-dot legend-unit"></span><span style="color:#f6ad55;">Unit / Worker</span></div>
     <div class="legend-item"><span class="legend-dot legend-building"></span><span style="color:#63b3ed;">Building</span></div>
     <div class="legend-item"><span class="legend-dot legend-upgrade"></span><span style="color:#68d391;">Research / Upgrade</span></div>
+    <div class="legend-item"><span class="legend-dot legend-ability"></span><span style="color:#b794f4;">Ability</span></div>
   </div>
 </div>
 
@@ -204,7 +207,6 @@ details[open] > summary .expand-btn::after { content: '▲'; }
           <div class="branch-header">Branch A — Adept Harass (dominant ~44%)</div>
           <table class="build-table">
             <tr><td class="time-col">[04:32]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Adept</td></tr>
-            <tr><td class="time-col">[04:32]</td><td class="supply-col">[26/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
             <tr><td class="time-col">[04:48]</td><td class="supply-col">[29/31]</td><td class="unit-col building">Twilight Council</td></tr>
           </table>
         </div>
@@ -259,15 +261,11 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[03:52]</td><td class="supply-col">[22/23]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:16]</td><td class="supply-col">[25/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:33]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:34]</td><td class="supply-col">[26/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[04:39]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:48]</td><td class="supply-col">[29/31]</td><td class="unit-col building">Twilight Council</td></tr>
-<tr><td class="time-col">[04:57]</td><td class="supply-col">[29/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:03]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:12]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:13]</td><td class="supply-col">[30/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:20]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
-<tr><td class="time-col">[05:24]</td><td class="supply-col">[31/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:27]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:44]</td><td class="supply-col">[32/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:49]</td><td class="supply-col">[32/46]</td><td class="unit-col upgrade">Warp Gate Research</td></tr>
@@ -351,18 +349,13 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[03:50]</td><td class="supply-col">[22/23]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:13]</td><td class="supply-col">[25/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:31]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:32]</td><td class="supply-col">[26/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[04:37]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:49]</td><td class="supply-col">[29/31]</td><td class="unit-col building">Twilight Council</td></tr>
 <tr><td class="time-col">[05:01]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:06]</td><td class="supply-col">[29/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:10]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:12]</td><td class="supply-col">[30/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:19]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[05:24]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:29]</td><td class="supply-col">[33/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:39]</td><td class="supply-col">[34/46]</td><td class="unit-col upgrade">Warp Gate Research</td></tr>
-<tr><td class="time-col">[05:42]</td><td class="supply-col">[34/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:45]</td><td class="supply-col">[34/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:48]</td><td class="supply-col">[34/46]</td><td class="unit-col unit">Probe</td></tr></table>
     </div>
@@ -407,6 +400,7 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[05:20]</td><td class="supply-col">[30/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:21]</td><td class="supply-col">[30/46]</td><td class="unit-col unit">Sentry</td></tr>
 <tr><td class="time-col">[05:24]</td><td class="supply-col">[34/46]</td><td class="unit-col unit">Phoenix</td></tr>
+<tr><td class="time-col">[05:24]</td><td class="supply-col">[34/46]</td><td class="unit-col ability">Sentry Hallucination (Phoenix)</td></tr>
 <tr><td class="time-col">[05:39]</td><td class="supply-col">[34/46]</td><td class="unit-col upgrade">Warp Gate Research</td></tr>
 <tr><td class="time-col">[05:42]</td><td class="supply-col">[34/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:44]</td><td class="supply-col">[34/46]</td><td class="unit-col unit">Probe</td></tr></table>
@@ -445,21 +439,16 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[03:52]</td><td class="supply-col">[22/23]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:15]</td><td class="supply-col">[25/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:32]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:34]</td><td class="supply-col">[26/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[04:39]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:45]</td><td class="supply-col">[29/31]</td><td class="unit-col building">Twilight Council</td></tr>
-<tr><td class="time-col">[04:57]</td><td class="supply-col">[29/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:03]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:11]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[05:19]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
-<tr><td class="time-col">[05:19]</td><td class="supply-col">[30/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:26]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:27]</td><td class="supply-col">[33/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:37]</td><td class="supply-col">[34/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:42]</td><td class="supply-col">[34/46]</td><td class="unit-col upgrade">Warp Gate Research</td></tr>
 <tr><td class="time-col">[05:50]</td><td class="supply-col">[35/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:53]</td><td class="supply-col">[35/46]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:57]</td><td class="supply-col">[35/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr></table>
     </div>
   </details>
 </div>
@@ -495,7 +484,6 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[03:54]</td><td class="supply-col">[22/23]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:17]</td><td class="supply-col">[25/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:35]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:38]</td><td class="supply-col">[26/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[04:41]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:59]</td><td class="supply-col">[29/31]</td><td class="unit-col building">Twilight Council</td></tr>
 <tr><td class="time-col">[05:05]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Probe</td></tr>
@@ -542,16 +530,12 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[03:49]</td><td class="supply-col">[22/23]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:13]</td><td class="supply-col">[25/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:30]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:32]</td><td class="supply-col">[26/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[04:37]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:46]</td><td class="supply-col">[29/31]</td><td class="unit-col building">Twilight Council</td></tr>
-<tr><td class="time-col">[04:55]</td><td class="supply-col">[29/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:00]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:10]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[05:15]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
-<tr><td class="time-col">[05:21]</td><td class="supply-col">[30/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:24]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:27]</td><td class="supply-col">[33/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:41]</td><td class="supply-col">[34/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:48]</td><td class="supply-col">[34/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:48]</td><td class="supply-col">[34/46]</td><td class="unit-col upgrade">Warp Gate Research</td></tr></table>
@@ -590,17 +574,13 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[03:50]</td><td class="supply-col">[23/23]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:20]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:35]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:37]</td><td class="supply-col">[27/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[04:43]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:50]</td><td class="supply-col">[29/31]</td><td class="unit-col building">Twilight Council</td></tr>
-<tr><td class="time-col">[05:02]</td><td class="supply-col">[30/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:07]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:15]</td><td class="supply-col">[31/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:18]</td><td class="supply-col">[31/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:20]</td><td class="supply-col">[31/31]</td><td class="unit-col upgrade">Warp Gate Research</td></tr>
 <tr><td class="time-col">[05:29]</td><td class="supply-col">[31/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[05:31]</td><td class="supply-col">[31/31]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:35]</td><td class="supply-col">[31/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:54]</td><td class="supply-col">[35/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:55]</td><td class="supply-col">[35/46]</td><td class="unit-col unit">Probe</td></tr></table>
     </div>
@@ -684,19 +664,13 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[03:48]</td><td class="supply-col">[22/23]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:12]</td><td class="supply-col">[25/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:30]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:31]</td><td class="supply-col">[26/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[04:36]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:45]</td><td class="supply-col">[29/31]</td><td class="unit-col building">Twilight Council</td></tr>
-<tr><td class="time-col">[04:55]</td><td class="supply-col">[29/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[04:59]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:10]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:11]</td><td class="supply-col">[30/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:15]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
-<tr><td class="time-col">[05:21]</td><td class="supply-col">[30/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:23]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:32]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:42]</td><td class="supply-col">[35/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:44]</td><td class="supply-col">[35/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:47]</td><td class="supply-col">[35/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:48]</td><td class="supply-col">[35/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:54]</td><td class="supply-col">[36/46]</td><td class="unit-col upgrade">Warp Gate Research</td></tr></table>
@@ -735,21 +709,16 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[03:49]</td><td class="supply-col">[22/23]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:13]</td><td class="supply-col">[25/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:30]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:32]</td><td class="supply-col">[26/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[04:37]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:55]</td><td class="supply-col">[29/31]</td><td class="unit-col building">Twilight Council</td></tr>
-<tr><td class="time-col">[04:56]</td><td class="supply-col">[29/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:00]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:09]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:11]</td><td class="supply-col">[30/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:18]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
-<tr><td class="time-col">[05:20]</td><td class="supply-col">[30/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:24]</td><td class="supply-col">[30/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:41]</td><td class="supply-col">[32/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:48]</td><td class="supply-col">[32/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:50]</td><td class="supply-col">[32/46]</td><td class="unit-col building">Shield Battery</td></tr>
 <tr><td class="time-col">[05:53]</td><td class="supply-col">[32/46]</td><td class="unit-col building">Shield Battery</td></tr>
-<tr><td class="time-col">[05:56]</td><td class="supply-col">[32/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:57]</td><td class="supply-col">[32/46]</td><td class="unit-col unit">Probe</td></tr></table>
     </div>
   </details>
@@ -794,6 +763,7 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[05:30]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:32]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Sentry</td></tr>
 <tr><td class="time-col">[05:35]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Phoenix</td></tr>
+<tr><td class="time-col">[05:35]</td><td class="supply-col">[31/46]</td><td class="unit-col ability">Sentry Hallucination (Phoenix)</td></tr>
 <tr><td class="time-col">[05:42]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:54]</td><td class="supply-col">[36/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:57]</td><td class="supply-col">[36/46]</td><td class="unit-col unit">Probe</td></tr></table>
@@ -833,9 +803,7 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:11]</td><td class="supply-col">[25/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:25]</td><td class="supply-col">[26/31]</td><td class="unit-col building">Twilight Council</td></tr>
 <tr><td class="time-col">[04:30]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:32]</td><td class="supply-col">[26/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[04:35]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[04:56]</td><td class="supply-col">[29/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:00]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:13]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[05:15]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
@@ -1009,20 +977,15 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[03:52]</td><td class="supply-col">[22/23]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:16]</td><td class="supply-col">[25/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:33]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:34]</td><td class="supply-col">[26/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[04:39]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:52]</td><td class="supply-col">[29/31]</td><td class="unit-col building">Robotics Facility</td></tr>
-<tr><td class="time-col">[04:57]</td><td class="supply-col">[29/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:03]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:12]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:14]</td><td class="supply-col">[30/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:20]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
-<tr><td class="time-col">[05:21]</td><td class="supply-col">[30/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:27]</td><td class="supply-col">[32/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:40]</td><td class="supply-col">[34/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:49]</td><td class="supply-col">[34/46]</td><td class="unit-col upgrade">Warp Gate Research</td></tr>
 <tr><td class="time-col">[05:50]</td><td class="supply-col">[35/46]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:51]</td><td class="supply-col">[35/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:56]</td><td class="supply-col">[35/46]</td><td class="unit-col unit">Probe</td></tr></table>
     </div>
   </details>
@@ -1059,20 +1022,16 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[03:51]</td><td class="supply-col">[22/23]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:15]</td><td class="supply-col">[25/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:31]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:34]</td><td class="supply-col">[26/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[04:39]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:48]</td><td class="supply-col">[28/31]</td><td class="unit-col building">Gateway</td></tr>
 <tr><td class="time-col">[05:03]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:03]</td><td class="supply-col">[28/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:04]</td><td class="supply-col">[28/31]</td><td class="unit-col building">Twilight Council</td></tr>
 <tr><td class="time-col">[05:06]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Stalker</td></tr>
 <tr><td class="time-col">[05:18]</td><td class="supply-col">[31/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[05:26]</td><td class="supply-col">[32/46]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:28]</td><td class="supply-col">[32/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:42]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:50]</td><td class="supply-col">[34/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:51]</td><td class="supply-col">[34/46]</td><td class="unit-col building">Shield Battery</td></tr>
-<tr><td class="time-col">[05:53]</td><td class="supply-col">[34/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr></table>
     </div>
   </details>
 </div>
@@ -1115,6 +1074,7 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[05:21]</td><td class="supply-col">[30/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:21]</td><td class="supply-col">[30/46]</td><td class="unit-col unit">Sentry</td></tr>
 <tr><td class="time-col">[05:26]</td><td class="supply-col">[34/46]</td><td class="unit-col unit">Phoenix</td></tr>
+<tr><td class="time-col">[05:26]</td><td class="supply-col">[34/46]</td><td class="unit-col ability">Sentry Hallucination (Phoenix)</td></tr>
 <tr><td class="time-col">[05:41]</td><td class="supply-col">[34/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:44]</td><td class="supply-col">[34/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:46]</td><td class="supply-col">[34/46]</td><td class="unit-col upgrade">Warp Gate Research</td></tr></table>
@@ -1161,19 +1121,13 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:07]</td><td class="supply-col">[22/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:31]</td><td class="supply-col">[25/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:38]</td><td class="supply-col">[25/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:43]</td><td class="supply-col">[28/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[04:45]</td><td class="supply-col">[28/31]</td><td class="unit-col building">Twilight Council</td></tr>
 <tr><td class="time-col">[04:55]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:06]</td><td class="supply-col">[28/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:18]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[05:19]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:20]</td><td class="supply-col">[29/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:26]</td><td class="supply-col">[31/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
-<tr><td class="time-col">[05:29]</td><td class="supply-col">[31/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:43]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:44]</td><td class="supply-col">[33/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:50]</td><td class="supply-col">[34/46]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:51]</td><td class="supply-col">[34/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:59]</td><td class="supply-col">[34/46]</td><td class="unit-col unit">Probe</td></tr></table>
     </div>
   </details>
@@ -1214,10 +1168,8 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[05:01]</td><td class="supply-col">[28/31]</td><td class="unit-col building">Twilight Council</td></tr>
 <tr><td class="time-col">[05:06]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:11]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:13]</td><td class="supply-col">[29/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:24]</td><td class="supply-col">[31/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[05:30]</td><td class="supply-col">[31/31]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:37]</td><td class="supply-col">[33/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:48]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:56]</td><td class="supply-col">[34/46]</td><td class="unit-col upgrade">Warp Gate Research</td></tr>
 <tr><td class="time-col">[05:58]</td><td class="supply-col">[34/46]</td><td class="unit-col unit">Probe</td></tr></table>
@@ -1266,6 +1218,7 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[05:31]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:33]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Sentry</td></tr>
 <tr><td class="time-col">[05:34]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Phoenix</td></tr>
+<tr><td class="time-col">[05:34]</td><td class="supply-col">[31/46]</td><td class="unit-col ability">Sentry Hallucination (Phoenix)</td></tr>
 <tr><td class="time-col">[05:41]</td><td class="supply-col">[32/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:54]</td><td class="supply-col">[35/46]</td><td class="unit-col unit">Probe</td></tr></table>
     </div>
@@ -1348,10 +1301,8 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[05:02]</td><td class="supply-col">[28/31]</td><td class="unit-col building">Twilight Council</td></tr>
 <tr><td class="time-col">[05:12]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:22]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:24]</td><td class="supply-col">[29/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:36]</td><td class="supply-col">[31/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:39]</td><td class="supply-col">[31/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
-<tr><td class="time-col">[05:55]</td><td class="supply-col">[33/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr></table>
     </div>
   </details>
 </div>
@@ -1428,9 +1379,7 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:32]</td><td class="supply-col">[25/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:33]</td><td class="supply-col">[25/31]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[04:35]</td><td class="supply-col">[25/31]</td><td class="unit-col building">Stargate</td></tr>
-<tr><td class="time-col">[04:50]</td><td class="supply-col">[26/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[04:56]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:15]</td><td class="supply-col">[29/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:21]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[05:21]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:37]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
@@ -1483,6 +1432,7 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[05:27]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:27]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Sentry</td></tr>
 <tr><td class="time-col">[05:29]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Phoenix</td></tr>
+<tr><td class="time-col">[05:29]</td><td class="supply-col">[31/46]</td><td class="unit-col ability">Sentry Hallucination (Phoenix)</td></tr>
 <tr><td class="time-col">[05:40]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:57]</td><td class="supply-col">[36/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:57]</td><td class="supply-col">[36/46]</td><td class="unit-col unit">Probe</td></tr></table>
@@ -1522,7 +1472,6 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:13]</td><td class="supply-col">[25/31]</td><td class="unit-col building">Shield Battery</td></tr>
 <tr><td class="time-col">[04:32]</td><td class="supply-col">[25/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:41]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:46]</td><td class="supply-col">[26/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[04:55]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:55]</td><td class="supply-col">[28/31]</td><td class="unit-col building">Twilight Council</td></tr>
 <tr><td class="time-col">[05:17]</td><td class="supply-col">[29/31]</td><td class="unit-col building">Shield Battery</td></tr>
@@ -1580,7 +1529,6 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[05:02]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:16]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:18]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:26]</td><td class="supply-col">[33/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:32]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:34]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:44]</td><td class="supply-col">[35/46]</td><td class="unit-col unit">Stalker</td></tr>
@@ -1625,13 +1573,11 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:47]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[04:59]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[04:59]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:11]</td><td class="supply-col">[31/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:15]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:15]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:30]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:31]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:40]</td><td class="supply-col">[35/46]</td><td class="unit-col unit">Stalker</td></tr>
-<tr><td class="time-col">[05:47]</td><td class="supply-col">[35/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:51]</td><td class="supply-col">[35/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:53]</td><td class="supply-col">[35/46]</td><td class="unit-col unit">Probe</td></tr></table>
     </div>
@@ -1671,13 +1617,11 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:26]</td><td class="supply-col">[26/31]</td><td class="unit-col building">Twilight Council</td></tr>
 <tr><td class="time-col">[04:39]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:47]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:48]</td><td class="supply-col">[27/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[04:58]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[05:02]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:16]</td><td class="supply-col">[31/46]</td><td class="unit-col building">Shield Battery</td></tr>
 <tr><td class="time-col">[05:22]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:26]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:34]</td><td class="supply-col">[31/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:40]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Stalker</td></tr>
 <tr><td class="time-col">[05:46]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:50]</td><td class="supply-col">[34/46]</td><td class="unit-col unit">Probe</td></tr>
@@ -1719,10 +1663,8 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:27]</td><td class="supply-col">[26/31]</td><td class="unit-col building">Twilight Council</td></tr>
 <tr><td class="time-col">[04:39]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:48]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:52]</td><td class="supply-col">[27/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:01]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[05:03]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:19]</td><td class="supply-col">[31/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:25]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:27]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:41]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Stalker</td></tr>
@@ -1763,16 +1705,12 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[03:52]</td><td class="supply-col">[22/23]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:16]</td><td class="supply-col">[25/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:34]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:35]</td><td class="supply-col">[26/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[04:40]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:41]</td><td class="supply-col">[28/31]</td><td class="unit-col building">Twilight Council</td></tr>
-<tr><td class="time-col">[04:58]</td><td class="supply-col">[29/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:07]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:13]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[05:19]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
-<tr><td class="time-col">[05:22]</td><td class="supply-col">[33/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:31]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:37]</td><td class="supply-col">[34/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:43]</td><td class="supply-col">[34/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:52]</td><td class="supply-col">[35/46]</td><td class="unit-col building">Shield Battery</td></tr>
 <tr><td class="time-col">[05:54]</td><td class="supply-col">[35/46]</td><td class="unit-col unit">Probe</td></tr></table>
@@ -1820,15 +1758,12 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:07]</td><td class="supply-col">[23/23]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:35]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:44]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:45]</td><td class="supply-col">[26/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[04:59]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:59]</td><td class="supply-col">[28/31]</td><td class="unit-col building">Twilight Council</td></tr>
 <tr><td class="time-col">[05:13]</td><td class="supply-col">[29/31]</td><td class="unit-col building">Shield Battery</td></tr>
-<tr><td class="time-col">[05:13]</td><td class="supply-col">[29/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:20]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Stalker</td></tr>
 <tr><td class="time-col">[05:23]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:30]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
-<tr><td class="time-col">[05:43]</td><td class="supply-col">[32/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:58]</td><td class="supply-col">[32/46]</td><td class="unit-col unit">Probe</td></tr></table>
     </div>
   </details>
@@ -1870,11 +1805,9 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:57]</td><td class="supply-col">[28/31]</td><td class="unit-col building">Twilight Council</td></tr>
 <tr><td class="time-col">[05:07]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:15]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:17]</td><td class="supply-col">[29/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:23]</td><td class="supply-col">[31/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[05:31]</td><td class="supply-col">[31/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:48]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:49]</td><td class="supply-col">[33/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:54]</td><td class="supply-col">[34/46]</td><td class="unit-col unit">Probe</td></tr></table>
     </div>
   </details>
@@ -1917,7 +1850,6 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[05:29]</td><td class="supply-col">[29/31]</td><td class="unit-col building">Shield Battery</td></tr>
 <tr><td class="time-col">[05:31]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:33]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:43]</td><td class="supply-col">[30/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:49]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[05:55]</td><td class="supply-col">[32/46]</td><td class="unit-col unit">Probe</td></tr></table>
     </div>
@@ -2008,14 +1940,12 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:46]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[05:00]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[05:04]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:06]</td><td class="supply-col">[30/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:22]</td><td class="supply-col">[32/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:28]</td><td class="supply-col">[32/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:38]</td><td class="supply-col">[34/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:45]</td><td class="supply-col">[34/46]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[05:52]</td><td class="supply-col">[35/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:54]</td><td class="supply-col">[35/46]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:59]</td><td class="supply-col">[35/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr></table>
     </div>
   </details>
 </div>
@@ -2055,11 +1985,9 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:48]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[04:58]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[05:01]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:02]</td><td class="supply-col">[29/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:09]</td><td class="supply-col">[30/46]</td><td class="unit-col building">Shield Battery</td></tr>
 <tr><td class="time-col">[05:30]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:31]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:38]</td><td class="supply-col">[32/38]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:54]</td><td class="supply-col">[28/38]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:55]</td><td class="supply-col">[28/38]</td><td class="unit-col unit">Stalker</td></tr></table>
     </div>
@@ -2107,8 +2035,6 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[05:38]</td><td class="supply-col">[35/46]</td><td class="unit-col building">Shield Battery</td></tr>
 <tr><td class="time-col">[05:44]</td><td class="supply-col">[35/46]</td><td class="unit-col building">Shield Battery</td></tr>
 <tr><td class="time-col">[05:47]</td><td class="supply-col">[35/46]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:48]</td><td class="supply-col">[35/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:48]</td><td class="supply-col">[35/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:48]</td><td class="supply-col">[35/46]</td><td class="unit-col unit">Probe</td></tr></table>
     </div>
   </details>
@@ -2147,17 +2073,14 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:27]</td><td class="supply-col">[25/31]</td><td class="unit-col building">Twilight Council</td></tr>
 <tr><td class="time-col">[04:35]</td><td class="supply-col">[25/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:45]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:55]</td><td class="supply-col">[28/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[04:56]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[04:59]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:20]</td><td class="supply-col">[30/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:22]</td><td class="supply-col">[30/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:23]</td><td class="supply-col">[30/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:25]</td><td class="supply-col">[30/46]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[05:44]</td><td class="supply-col">[34/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:46]</td><td class="supply-col">[34/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:50]</td><td class="supply-col">[36/46]</td><td class="unit-col upgrade">Warp Gate Research</td></tr>
-<tr><td class="time-col">[05:58]</td><td class="supply-col">[36/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:59]</td><td class="supply-col">[36/46]</td><td class="unit-col unit">Probe</td></tr></table>
     </div>
   </details>
@@ -2203,14 +2126,10 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:38]</td><td class="supply-col">[24/31]</td><td class="unit-col building">Stargate</td></tr>
 <tr><td class="time-col">[04:38]</td><td class="supply-col">[24/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:43]</td><td class="supply-col">[25/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:45]</td><td class="supply-col">[25/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:01]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:10]</td><td class="supply-col">[28/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:23]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[05:25]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:27]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
-<tr><td class="time-col">[05:32]</td><td class="supply-col">[28/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:42]</td><td class="supply-col">[29/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:49]</td><td class="supply-col">[29/46]</td><td class="unit-col unit">Probe</td></tr></table>
     </div>
   </details>
@@ -2248,15 +2167,12 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:19]</td><td class="supply-col">[25/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:41]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[04:43]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[04:46]</td><td class="supply-col">[26/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[04:50]</td><td class="supply-col">[26/31]</td><td class="unit-col building">Twilight Council</td></tr>
 <tr><td class="time-col">[05:07]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:14]</td><td class="supply-col">[30/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:17]</td><td class="supply-col">[30/31]</td><td class="unit-col upgrade">Warp Gate Research</td></tr>
 <tr><td class="time-col">[05:27]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[05:30]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:39]</td><td class="supply-col">[32/46]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:46]</td><td class="supply-col">[32/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:51]</td><td class="supply-col">[34/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:54]</td><td class="supply-col">[34/46]</td><td class="unit-col unit">Probe</td></tr></table>
     </div>
@@ -2389,16 +2305,13 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:39]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:49]</td><td class="supply-col">[27/31]</td><td class="unit-col building">Twilight Council</td></tr>
 <tr><td class="time-col">[04:51]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:52]</td><td class="supply-col">[27/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:02]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[05:03]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:15]</td><td class="supply-col">[31/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:20]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:22]</td><td class="supply-col">[32/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:36]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:38]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:41]</td><td class="supply-col">[33/46]</td><td class="unit-col upgrade">Warp Gate Research</td></tr>
-<tr><td class="time-col">[05:43]</td><td class="supply-col">[33/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:46]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Stalker</td></tr>
 <tr><td class="time-col">[05:55]</td><td class="supply-col">[35/46]</td><td class="unit-col unit">Probe</td></tr></table>
     </div>
@@ -2442,7 +2355,6 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[05:20]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[05:27]</td><td class="supply-col">[30/39]</td><td class="unit-col upgrade">Warp Gate Research</td></tr>
 <tr><td class="time-col">[05:39]</td><td class="supply-col">[30/39]</td><td class="unit-col building">Dark Shrine</td></tr>
-<tr><td class="time-col">[05:51]</td><td class="supply-col">[31/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:54]</td><td class="supply-col">[31/39]</td><td class="unit-col unit">Adept</td></tr></table>
     </div>
   </details>
@@ -2533,7 +2445,6 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:18]</td><td class="supply-col">[24/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:37]</td><td class="supply-col">[25/31]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[04:42]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[04:49]</td><td class="supply-col">[27/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:04]</td><td class="supply-col">[28/31]</td><td class="unit-col building">Twilight Council</td></tr>
 <tr><td class="time-col">[05:05]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:22]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
@@ -2631,10 +2542,8 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:53]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:54]</td><td class="supply-col">[28/31]</td><td class="unit-col building">Twilight Council</td></tr>
 <tr><td class="time-col">[05:07]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:10]</td><td class="supply-col">[28/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:17]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:18]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
-<tr><td class="time-col">[05:36]</td><td class="supply-col">[32/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:41]</td><td class="supply-col">[32/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:44]</td><td class="supply-col">[32/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:49]</td><td class="supply-col">[32/46]</td><td class="unit-col unit">Stalker</td></tr></table>
@@ -2680,21 +2589,17 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:01]</td><td class="supply-col">[23/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:24]</td><td class="supply-col">[24/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:35]</td><td class="supply-col">[25/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:37]</td><td class="supply-col">[25/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[04:47]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[04:48]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:00]</td><td class="supply-col">[29/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:03]</td><td class="supply-col">[29/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:12]</td><td class="supply-col">[30/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:19]</td><td class="supply-col">[30/46]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:23]</td><td class="supply-col">[32/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:28]</td><td class="supply-col">[32/46]</td><td class="unit-col unit">Stalker</td></tr>
 <tr><td class="time-col">[05:36]</td><td class="supply-col">[32/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:36]</td><td class="supply-col">[32/46]</td><td class="unit-col upgrade">Warp Gate Research</td></tr>
 <tr><td class="time-col">[05:39]</td><td class="supply-col">[32/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:41]</td><td class="supply-col">[32/46]</td><td class="unit-col upgrade">Warp Gate Research</td></tr>
 <tr><td class="time-col">[05:53]</td><td class="supply-col">[36/46]</td><td class="unit-col building">Pylon</td></tr>
-<tr><td class="time-col">[05:56]</td><td class="supply-col">[36/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr></table>
     </div>
   </details>
 </div>
@@ -2729,21 +2634,17 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:00]</td><td class="supply-col">[23/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:24]</td><td class="supply-col">[24/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:33]</td><td class="supply-col">[25/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:35]</td><td class="supply-col">[25/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[04:44]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[04:48]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[04:59]</td><td class="supply-col">[29/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:09]</td><td class="supply-col">[29/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:11]</td><td class="supply-col">[29/46]</td><td class="unit-col upgrade">Warp Gate Research</td></tr>
 <tr><td class="time-col">[05:11]</td><td class="supply-col">[29/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:21]</td><td class="supply-col">[29/46]</td><td class="unit-col upgrade">Warp Gate Research</td></tr>
 <tr><td class="time-col">[05:26]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Stalker</td></tr>
-<tr><td class="time-col">[05:30]</td><td class="supply-col">[31/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:32]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:35]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:51]</td><td class="supply-col">[35/46]</td><td class="unit-col building">Pylon</td></tr>
 <tr><td class="time-col">[05:56]</td><td class="supply-col">[35/46]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:58]</td><td class="supply-col">[35/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr></table>
     </div>
   </details>
 </div></div>
@@ -2796,6 +2697,7 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[05:22]</td><td class="supply-col">[32/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:26]</td><td class="supply-col">[32/46]</td><td class="unit-col unit">Sentry</td></tr>
 <tr><td class="time-col">[05:29]</td><td class="supply-col">[32/46]</td><td class="unit-col unit">Phoenix</td></tr>
+<tr><td class="time-col">[05:29]</td><td class="supply-col">[32/46]</td><td class="unit-col ability">Sentry Hallucination (Phoenix)</td></tr>
 <tr><td class="time-col">[05:33]</td><td class="supply-col">[32/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:44]</td><td class="supply-col">[36/46]</td><td class="unit-col upgrade">Warp Gate Research</td></tr>
 <tr><td class="time-col">[05:46]</td><td class="supply-col">[36/46]</td><td class="unit-col unit">Probe</td></tr>
@@ -2836,22 +2738,15 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:13]</td><td class="supply-col">[25/31]</td><td class="unit-col building">Shield Battery</td></tr>
 <tr><td class="time-col">[04:25]</td><td class="supply-col">[25/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:30]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:31]</td><td class="supply-col">[26/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[04:49]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:51]</td><td class="supply-col">[28/31]</td><td class="unit-col building">Twilight Council</td></tr>
-<tr><td class="time-col">[04:54]</td><td class="supply-col">[29/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:09]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:12]</td><td class="supply-col">[29/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:13]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:16]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
-<tr><td class="time-col">[05:25]</td><td class="supply-col">[32/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:35]</td><td class="supply-col">[32/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:38]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:40]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:54]</td><td class="supply-col">[35/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:55]</td><td class="supply-col">[35/46]</td><td class="unit-col upgrade">Warp Gate Research</td></tr>
-<tr><td class="time-col">[05:57]</td><td class="supply-col">[35/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:57]</td><td class="supply-col">[35/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr></table>
     </div>
   </details>
 </div></div>
@@ -2904,6 +2799,7 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[05:28]</td><td class="supply-col">[32/46]</td><td class="unit-col unit">Sentry</td></tr>
 <tr><td class="time-col">[05:31]</td><td class="supply-col">[32/46]</td><td class="unit-col unit">Phoenix</td></tr>
 <tr><td class="time-col">[05:31]</td><td class="supply-col">[32/46]</td><td class="unit-col unit">Probe</td></tr>
+<tr><td class="time-col">[05:31]</td><td class="supply-col">[32/46]</td><td class="unit-col ability">Sentry Hallucination (Phoenix)</td></tr>
 <tr><td class="time-col">[05:44]</td><td class="supply-col">[36/46]</td><td class="unit-col upgrade">Warp Gate Research</td></tr>
 <tr><td class="time-col">[05:45]</td><td class="supply-col">[36/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:50]</td><td class="supply-col">[36/46]</td><td class="unit-col building">Twilight Council</td></tr>
@@ -2952,6 +2848,7 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[05:22]</td><td class="supply-col">[32/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:26]</td><td class="supply-col">[32/46]</td><td class="unit-col unit">Sentry</td></tr>
 <tr><td class="time-col">[05:30]</td><td class="supply-col">[32/46]</td><td class="unit-col unit">Phoenix</td></tr>
+<tr><td class="time-col">[05:30]</td><td class="supply-col">[32/46]</td><td class="unit-col ability">Sentry Hallucination (Phoenix)</td></tr>
 <tr><td class="time-col">[05:32]</td><td class="supply-col">[32/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:46]</td><td class="supply-col">[36/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:55]</td><td class="supply-col">[37/46]</td><td class="unit-col unit">Probe</td></tr></table>
@@ -3003,14 +2900,12 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[05:02]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[05:02]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:20]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:23]</td><td class="supply-col">[32/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:26]</td><td class="supply-col">[32/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:36]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:44]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Stalker</td></tr>
 <tr><td class="time-col">[05:45]</td><td class="supply-col">[33/46]</td><td class="unit-col building">Shield Battery</td></tr>
 <tr><td class="time-col">[05:50]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:56]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:59]</td><td class="supply-col">[33/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr></table>
     </div>
   </details>
 </div>
@@ -3046,14 +2941,10 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[03:56]</td><td class="supply-col">[22/23]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:20]</td><td class="supply-col">[25/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:36]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:37]</td><td class="supply-col">[26/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[04:43]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:48]</td><td class="supply-col">[28/31]</td><td class="unit-col building">Twilight Council</td></tr>
-<tr><td class="time-col">[05:00]</td><td class="supply-col">[29/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:07]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:15]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:19]</td><td class="supply-col">[30/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:23]</td><td class="supply-col">[30/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:24]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[05:31]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:42]</td><td class="supply-col">[34/46]</td><td class="unit-col unit">Probe</td></tr>
@@ -3103,17 +2994,13 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[03:55]</td><td class="supply-col">[22/23]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:18]</td><td class="supply-col">[25/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:34]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:35]</td><td class="supply-col">[26/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[04:42]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[04:59]</td><td class="supply-col">[29/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:02]</td><td class="supply-col">[29/31]</td><td class="unit-col building">Twilight Council</td></tr>
 <tr><td class="time-col">[05:06]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:09]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Stalker</td></tr>
 <tr><td class="time-col">[05:18]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
-<tr><td class="time-col">[05:23]</td><td class="supply-col">[33/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:30]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:34]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:49]</td><td class="supply-col">[35/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:50]</td><td class="supply-col">[35/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:53]</td><td class="supply-col">[35/46]</td><td class="unit-col unit">Probe</td></tr></table>
     </div>
@@ -3152,15 +3039,10 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:31]</td><td class="supply-col">[25/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:38]</td><td class="supply-col">[25/31]</td><td class="unit-col building">Stargate</td></tr>
 <tr><td class="time-col">[04:38]</td><td class="supply-col">[25/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:40]</td><td class="supply-col">[26/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[04:55]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:04]</td><td class="supply-col">[28/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:18]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:27]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:27]</td><td class="supply-col">[30/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:38]</td><td class="supply-col">[30/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:42]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:52]</td><td class="supply-col">[31/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr></table>
     </div>
   </details>
 </div></div>
@@ -3263,12 +3145,10 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:37]</td><td class="supply-col">[26/31]</td><td class="unit-col building">Stargate</td></tr>
 <tr><td class="time-col">[04:43]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:57]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:00]</td><td class="supply-col">[27/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:04]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[05:07]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:29]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:31]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:31]</td><td class="supply-col">[31/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:53]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:55]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:55]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Adept</td></tr></table>
@@ -3354,15 +3234,11 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:34]</td><td class="supply-col">[26/31]</td><td class="unit-col building">Stargate</td></tr>
 <tr><td class="time-col">[04:40]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:51]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:52]</td><td class="supply-col">[26/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:02]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[05:04]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:15]</td><td class="supply-col">[31/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:27]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:29]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:30]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:35]</td><td class="supply-col">[31/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:43]</td><td class="supply-col">[33/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:51]</td><td class="supply-col">[35/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:53]</td><td class="supply-col">[35/46]</td><td class="unit-col unit">Probe</td></tr></table>
     </div>
@@ -3402,15 +3278,12 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:43]</td><td class="supply-col">[26/31]</td><td class="unit-col building">Twilight Council</td></tr>
 <tr><td class="time-col">[04:47]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:58]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:03]</td><td class="supply-col">[27/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:07]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[05:11]</td><td class="supply-col">[29/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:32]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:34]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:40]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:45]</td><td class="supply-col">[33/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:45]</td><td class="supply-col">[33/46]</td><td class="unit-col upgrade">Warp Gate Research</td></tr>
-<tr><td class="time-col">[05:49]</td><td class="supply-col">[33/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:56]</td><td class="supply-col">[35/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:58]</td><td class="supply-col">[35/46]</td><td class="unit-col unit">Probe</td></tr></table>
     </div>
@@ -3496,7 +3369,6 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:42]</td><td class="supply-col">[27/31]</td><td class="unit-col building">Stargate</td></tr>
 <tr><td class="time-col">[04:47]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:51]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:56]</td><td class="supply-col">[28/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:05]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[05:07]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:31]</td><td class="supply-col">[32/46]</td><td class="unit-col unit">Probe</td></tr>
@@ -3549,12 +3421,10 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:28]</td><td class="supply-col">[26/31]</td><td class="unit-col building">Stargate</td></tr>
 <tr><td class="time-col">[04:41]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:51]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:52]</td><td class="supply-col">[26/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:04]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:06]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[05:19]</td><td class="supply-col">[30/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:25]</td><td class="supply-col">[32/46]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:34]</td><td class="supply-col">[32/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:35]</td><td class="supply-col">[32/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:41]</td><td class="supply-col">[34/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:50]</td><td class="supply-col">[35/46]</td><td class="unit-col unit">Adept</td></tr>
@@ -3596,15 +3466,12 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:29]</td><td class="supply-col">[26/31]</td><td class="unit-col building">Stargate</td></tr>
 <tr><td class="time-col">[04:40]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:50]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:51]</td><td class="supply-col">[26/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:02]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[05:04]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:19]</td><td class="supply-col">[31/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:20]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:20]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:36]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:36]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:43]</td><td class="supply-col">[33/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:49]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[05:55]</td><td class="supply-col">[35/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:56]</td><td class="supply-col">[35/46]</td><td class="unit-col unit">Probe</td></tr></table>
@@ -3647,8 +3514,6 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:55]</td><td class="supply-col">[31/31]</td><td class="unit-col building">Stargate</td></tr>
 <tr><td class="time-col">[05:15]</td><td class="supply-col">[31/39]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[05:19]</td><td class="supply-col">[31/39]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:24]</td><td class="supply-col">[31/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:24]</td><td class="supply-col">[31/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:26]</td><td class="supply-col">[31/39]</td><td class="unit-col building">Nexus</td></tr>
 <tr><td class="time-col">[05:26]</td><td class="supply-col">[31/39]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[05:56]</td><td class="supply-col">[34/39]</td><td class="unit-col unit">Probe</td></tr></table>
@@ -3740,14 +3605,11 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:42]</td><td class="supply-col">[26/31]</td><td class="unit-col building">Stargate</td></tr>
 <tr><td class="time-col">[04:43]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:03]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:04]</td><td class="supply-col">[27/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:07]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:19]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[05:31]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:43]</td><td class="supply-col">[32/46]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[05:44]</td><td class="supply-col">[32/46]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:46]</td><td class="supply-col">[32/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:46]</td><td class="supply-col">[32/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:54]</td><td class="supply-col">[35/46]</td><td class="unit-col unit">Probe</td></tr></table>
     </div>
   </details>
@@ -3786,14 +3648,11 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:47]</td><td class="supply-col">[26/31]</td><td class="unit-col building">Stargate</td></tr>
 <tr><td class="time-col">[04:47]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:08]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:10]</td><td class="supply-col">[27/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:11]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:14]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
-<tr><td class="time-col">[05:33]</td><td class="supply-col">[31/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:35]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:39]</td><td class="supply-col">[32/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:47]</td><td class="supply-col">[32/46]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:56]</td><td class="supply-col">[35/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:58]</td><td class="supply-col">[35/46]</td><td class="unit-col unit">Probe</td></tr></table>
     </div>
   </details>
@@ -3883,14 +3742,11 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:36]</td><td class="supply-col">[25/31]</td><td class="unit-col building">Stargate</td></tr>
 <tr><td class="time-col">[04:54]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:05]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:06]</td><td class="supply-col">[26/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:15]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[05:18]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:40]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:41]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:45]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:47]</td><td class="supply-col">[31/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:47]</td><td class="supply-col">[31/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr></table>
     </div>
   </details>
 </div>
@@ -3929,11 +3785,9 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:44]</td><td class="supply-col">[26/31]</td><td class="unit-col building">Stargate</td></tr>
 <tr><td class="time-col">[05:02]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:02]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:03]</td><td class="supply-col">[26/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:07]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[05:23]</td><td class="supply-col">[30/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:31]</td><td class="supply-col">[30/46]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:33]</td><td class="supply-col">[30/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:39]</td><td class="supply-col">[32/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:55]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:55]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Probe</td></tr></table>
@@ -4023,16 +3877,12 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:33]</td><td class="supply-col">[26/31]</td><td class="unit-col building">Stargate</td></tr>
 <tr><td class="time-col">[04:47]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:58]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:01]</td><td class="supply-col">[27/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:09]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[05:11]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:25]</td><td class="supply-col">[31/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:26]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:34]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:39]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:41]</td><td class="supply-col">[33/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:42]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:50]</td><td class="supply-col">[36/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:58]</td><td class="supply-col">[36/46]</td><td class="unit-col unit">Probe</td></tr></table>
     </div>
   </details>
@@ -4072,16 +3922,13 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:37]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:53]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:54]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:55]</td><td class="supply-col">[28/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:04]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[05:12]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:23]</td><td class="supply-col">[32/46]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:24]</td><td class="supply-col">[32/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:38]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:39]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:39]</td><td class="supply-col">[33/46]</td><td class="unit-col building">Robotics Facility</td></tr>
 <tr><td class="time-col">[05:50]</td><td class="supply-col">[35/46]</td><td class="unit-col unit">Stalker</td></tr>
-<tr><td class="time-col">[05:52]</td><td class="supply-col">[35/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr></table>
     </div>
   </details>
 </div>
@@ -4122,12 +3969,10 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[05:03]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[05:05]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:09]</td><td class="supply-col">[30/46]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:11]</td><td class="supply-col">[30/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:20]</td><td class="supply-col">[30/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:21]</td><td class="supply-col">[30/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:36]</td><td class="supply-col">[34/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:44]</td><td class="supply-col">[34/46]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:47]</td><td class="supply-col">[34/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:55]</td><td class="supply-col">[40/46]</td><td class="unit-col unit">Probe</td></tr></table>
     </div>
   </details>
@@ -4266,15 +4111,12 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:38]</td><td class="supply-col">[23/23]</td><td class="unit-col building">Stargate</td></tr>
 <tr><td class="time-col">[04:52]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:05]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:08]</td><td class="supply-col">[29/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:13]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:15]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[05:29]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:31]</td><td class="supply-col">[31/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:32]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:45]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:47]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:55]</td><td class="supply-col">[35/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr></table>
     </div>
   </details>
 </div></div>
@@ -4368,16 +4210,10 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:42]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[04:44]</td><td class="supply-col">[29/31]</td><td class="unit-col building">Pylon</td></tr>
 <tr><td class="time-col">[04:47]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:48]</td><td class="supply-col">[29/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[04:48]</td><td class="supply-col">[29/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[04:53]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:15]</td><td class="supply-col">[31/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:15]</td><td class="supply-col">[31/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:22]</td><td class="supply-col">[31/39]</td><td class="unit-col building">Nexus</td></tr>
 <tr><td class="time-col">[05:22]</td><td class="supply-col">[31/39]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[05:41]</td><td class="supply-col">[31/39]</td><td class="unit-col building">Stargate</td></tr>
-<tr><td class="time-col">[05:42]</td><td class="supply-col">[31/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:42]</td><td class="supply-col">[31/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr></table>
     </div>
   </details>
 </div></div>
@@ -4423,14 +4259,11 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:38]</td><td class="supply-col">[26/31]</td><td class="unit-col building">Stargate</td></tr>
 <tr><td class="time-col">[04:42]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:54]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:57]</td><td class="supply-col">[27/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:05]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[05:06]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:23]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:30]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:33]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:37]</td><td class="supply-col">[35/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:39]</td><td class="supply-col">[35/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:40]</td><td class="supply-col">[35/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:54]</td><td class="supply-col">[36/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:59]</td><td class="supply-col">[36/46]</td><td class="unit-col unit">Probe</td></tr></table>
@@ -4471,15 +4304,12 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:44]</td><td class="supply-col">[26/31]</td><td class="unit-col building">Stargate</td></tr>
 <tr><td class="time-col">[04:47]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:59]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:01]</td><td class="supply-col">[27/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:06]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[05:10]</td><td class="supply-col">[29/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:24]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:34]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:38]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:40]</td><td class="supply-col">[33/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:40]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:42]</td><td class="supply-col">[33/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:58]</td><td class="supply-col">[36/46]</td><td class="unit-col unit">Probe</td></tr></table>
     </div>
   </details>
@@ -4572,7 +4402,6 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:56]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:59]</td><td class="supply-col">[28/31]</td><td class="unit-col building">Stargate</td></tr>
 <tr><td class="time-col">[05:06]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:20]</td><td class="supply-col">[29/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:20]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:43]</td><td class="supply-col">[30/39]</td><td class="unit-col upgrade">Warp Gate Research</td></tr>
 <tr><td class="time-col">[05:52]</td><td class="supply-col">[30/39]</td><td class="unit-col unit">Probe</td></tr></table>
@@ -4712,14 +4541,11 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:22]</td><td class="supply-col">[23/23]</td><td class="unit-col building">Stargate</td></tr>
 <tr><td class="time-col">[04:50]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:01]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:02]</td><td class="supply-col">[27/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:03]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[05:13]</td><td class="supply-col">[30/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:20]</td><td class="supply-col">[30/46]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:26]</td><td class="supply-col">[32/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:36]</td><td class="supply-col">[32/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:37]</td><td class="supply-col">[32/46]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:51]</td><td class="supply-col">[37/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:55]</td><td class="supply-col">[37/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:59]</td><td class="supply-col">[37/46]</td><td class="unit-col unit">Adept</td></tr></table>
     </div>
@@ -4812,15 +4638,12 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:33]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:49]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:57]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:00]</td><td class="supply-col">[28/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:02]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[05:12]</td><td class="supply-col">[29/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:19]</td><td class="supply-col">[29/46]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:30]</td><td class="supply-col">[33/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:35]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:35]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:54]</td><td class="supply-col">[35/46]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:58]</td><td class="supply-col">[35/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:59]</td><td class="supply-col">[35/46]</td><td class="unit-col unit">Probe</td></tr></table>
     </div>
   </details>
@@ -4862,11 +4685,9 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:55]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:01]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[05:06]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
-<tr><td class="time-col">[05:06]</td><td class="supply-col">[27/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:26]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:34]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:41]</td><td class="supply-col">[32/46]</td><td class="unit-col building">Stargate</td></tr>
-<tr><td class="time-col">[05:45]</td><td class="supply-col">[32/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:50]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:55]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Stalker</td></tr></table>
     </div>
@@ -4914,16 +4735,12 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:39]</td><td class="supply-col">[26/31]</td><td class="unit-col building">Stargate</td></tr>
 <tr><td class="time-col">[04:47]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:58]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:00]</td><td class="supply-col">[27/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:08]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[05:10]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:23]</td><td class="supply-col">[31/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:25]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:34]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:37]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:40]</td><td class="supply-col">[33/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:41]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:47]</td><td class="supply-col">[33/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:58]</td><td class="supply-col">[36/46]</td><td class="unit-col unit">Probe</td></tr></table>
     </div>
   </details>
@@ -4962,14 +4779,11 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:17]</td><td class="supply-col">[23/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:43]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:54]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:55]</td><td class="supply-col">[27/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:01]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[05:07]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:26]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:26]</td><td class="supply-col">[31/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:31]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:34]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:41]</td><td class="supply-col">[36/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:48]</td><td class="supply-col">[36/46]</td><td class="unit-col building">Pylon</td></tr>
 <tr><td class="time-col">[05:49]</td><td class="supply-col">[36/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:54]</td><td class="supply-col">[37/46]</td><td class="unit-col unit">Probe</td></tr></table>
@@ -5080,14 +4894,8 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:44]</td><td class="supply-col">[28/31]</td><td class="unit-col building">Pylon</td></tr>
 <tr><td class="time-col">[04:55]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[04:56]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:03]</td><td class="supply-col">[28/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:03]</td><td class="supply-col">[28/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:26]</td><td class="supply-col">[33/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:26]</td><td class="supply-col">[33/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:35]</td><td class="supply-col">[33/39]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:41]</td><td class="supply-col">[33/39]</td><td class="unit-col unit">Sentry</td></tr>
-<tr><td class="time-col">[05:54]</td><td class="supply-col">[35/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:54]</td><td class="supply-col">[35/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:55]</td><td class="supply-col">[35/39]</td><td class="unit-col unit">Stalker</td></tr></table>
     </div>
   </details>
@@ -5174,14 +4982,8 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:23]</td><td class="supply-col">[28/31]</td><td class="unit-col building">Pylon</td></tr>
 <tr><td class="time-col">[04:52]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[04:52]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:54]</td><td class="supply-col">[30/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[04:54]</td><td class="supply-col">[30/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:18]</td><td class="supply-col">[32/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:18]</td><td class="supply-col">[32/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:34]</td><td class="supply-col">[33/39]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:37]</td><td class="supply-col">[33/39]</td><td class="unit-col unit">Sentry</td></tr>
-<tr><td class="time-col">[05:41]</td><td class="supply-col">[33/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:41]</td><td class="supply-col">[33/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:47]</td><td class="supply-col">[33/39]</td><td class="unit-col building">Shield Battery</td></tr>
 <tr><td class="time-col">[05:55]</td><td class="supply-col">[35/39]</td><td class="unit-col unit">Stalker</td></tr></table>
     </div>
@@ -5222,6 +5024,7 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:39]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:55]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Sentry</td></tr>
 <tr><td class="time-col">[04:56]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Phoenix</td></tr>
+<tr><td class="time-col">[04:56]</td><td class="supply-col">[27/31]</td><td class="unit-col ability">Sentry Hallucination (Phoenix)</td></tr>
 <tr><td class="time-col">[05:00]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[05:03]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:27]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
@@ -5267,6 +5070,7 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:43]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:55]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Sentry</td></tr>
 <tr><td class="time-col">[04:57]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Phoenix</td></tr>
+<tr><td class="time-col">[04:57]</td><td class="supply-col">[27/31]</td><td class="unit-col ability">Sentry Hallucination (Phoenix)</td></tr>
 <tr><td class="time-col">[04:59]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[05:08]</td><td class="supply-col">[30/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:24]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
@@ -5314,14 +5118,10 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:44]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:02]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[05:02]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
-<tr><td class="time-col">[05:04]</td><td class="supply-col">[27/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:08]</td><td class="supply-col">[30/46]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:27]</td><td class="supply-col">[31/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:29]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:32]</td><td class="supply-col">[31/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:41]</td><td class="supply-col">[33/46]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:42]</td><td class="supply-col">[33/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:50]</td><td class="supply-col">[35/46]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:53]</td><td class="supply-col">[35/46]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:56]</td><td class="supply-col">[35/46]</td><td class="unit-col unit">Probe</td></tr></table>
     </div>
@@ -5363,6 +5163,7 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:34]</td><td class="supply-col">[26/31]</td><td class="unit-col building">Pylon</td></tr>
 <tr><td class="time-col">[04:39]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Sentry</td></tr>
 <tr><td class="time-col">[04:49]</td><td class="supply-col">[26/31]</td><td class="unit-col unit">Phoenix</td></tr>
+<tr><td class="time-col">[04:49]</td><td class="supply-col">[26/31]</td><td class="unit-col ability">Sentry Hallucination (Phoenix)</td></tr>
 <tr><td class="time-col">[04:59]</td><td class="supply-col">[28/31]</td><td class="unit-col building">Pylon</td></tr>
 <tr><td class="time-col">[05:29]</td><td class="supply-col">[31/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:40]</td><td class="supply-col">[32/39]</td><td class="unit-col unit">Stalker</td></tr>
@@ -5550,7 +5351,8 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[05:36]</td><td class="supply-col">[33/39]</td><td class="unit-col unit">Sentry</td></tr>
 <tr><td class="time-col">[05:39]</td><td class="supply-col">[33/39]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:46]</td><td class="supply-col">[33/39]</td><td class="unit-col unit">Sentry</td></tr>
-<tr><td class="time-col">[05:56]</td><td class="supply-col">[36/39]</td><td class="unit-col unit">Phoenix</td></tr></table>
+<tr><td class="time-col">[05:56]</td><td class="supply-col">[36/39]</td><td class="unit-col unit">Phoenix</td></tr>
+<tr><td class="time-col">[05:56]</td><td class="supply-col">[36/39]</td><td class="unit-col ability">Sentry Hallucination (Phoenix)</td></tr></table>
     </div>
   </details>
 </div>
@@ -5588,13 +5390,7 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:16]</td><td class="supply-col">[27/31]</td><td class="unit-col building">Pylon</td></tr>
 <tr><td class="time-col">[04:51]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[04:51]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:53]</td><td class="supply-col">[27/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[04:53]</td><td class="supply-col">[27/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:17]</td><td class="supply-col">[31/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:17]</td><td class="supply-col">[31/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:40]</td><td class="supply-col">[33/39]</td><td class="unit-col building">Pylon</td></tr>
-<tr><td class="time-col">[05:44]</td><td class="supply-col">[33/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:44]</td><td class="supply-col">[33/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:44]</td><td class="supply-col">[33/39]</td><td class="unit-col unit">Stalker</td></tr>
 <tr><td class="time-col">[05:44]</td><td class="supply-col">[33/39]</td><td class="unit-col unit">Stalker</td></tr></table>
     </div>
@@ -5635,15 +5431,9 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:14]</td><td class="supply-col">[28/31]</td><td class="unit-col building">Pylon</td></tr>
 <tr><td class="time-col">[04:51]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[04:51]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:54]</td><td class="supply-col">[32/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[04:54]</td><td class="supply-col">[32/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:17]</td><td class="supply-col">[32/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:17]</td><td class="supply-col">[32/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:44]</td><td class="supply-col">[32/39]</td><td class="unit-col unit">Stalker</td></tr>
 <tr><td class="time-col">[05:45]</td><td class="supply-col">[32/39]</td><td class="unit-col unit">Stalker</td></tr>
 <tr><td class="time-col">[05:47]</td><td class="supply-col">[32/39]</td><td class="unit-col building">Pylon</td></tr>
-<tr><td class="time-col">[05:49]</td><td class="supply-col">[32/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:49]</td><td class="supply-col">[32/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:53]</td><td class="supply-col">[36/39]</td><td class="unit-col building">Shield Battery</td></tr></table>
     </div>
   </details>
@@ -5691,7 +5481,8 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[05:34]</td><td class="supply-col">[33/39]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:40]</td><td class="supply-col">[34/39]</td><td class="unit-col building">Twilight Council</td></tr>
 <tr><td class="time-col">[05:50]</td><td class="supply-col">[34/39]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:53]</td><td class="supply-col">[34/39]</td><td class="unit-col unit">Phoenix</td></tr></table>
+<tr><td class="time-col">[05:53]</td><td class="supply-col">[34/39]</td><td class="unit-col unit">Phoenix</td></tr>
+<tr><td class="time-col">[05:53]</td><td class="supply-col">[34/39]</td><td class="unit-col ability">Sentry Hallucination (Phoenix)</td></tr></table>
     </div>
   </details>
 </div>
@@ -5731,14 +5522,8 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:29]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:49]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[04:49]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:53]</td><td class="supply-col">[30/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[04:53]</td><td class="supply-col">[30/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[04:53]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:15]</td><td class="supply-col">[34/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:15]</td><td class="supply-col">[34/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:23]</td><td class="supply-col">[35/39]</td><td class="unit-col building">Pylon</td></tr>
-<tr><td class="time-col">[05:39]</td><td class="supply-col">[35/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:39]</td><td class="supply-col">[35/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:43]</td><td class="supply-col">[35/39]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:47]</td><td class="supply-col">[35/39]</td><td class="unit-col unit">Stalker</td></tr>
 <tr><td class="time-col">[05:54]</td><td class="supply-col">[38/39]</td><td class="unit-col unit">Stalker</td></tr></table>
@@ -5779,13 +5564,7 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:14]</td><td class="supply-col">[27/31]</td><td class="unit-col building">Pylon</td></tr>
 <tr><td class="time-col">[04:51]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[04:51]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:53]</td><td class="supply-col">[27/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[04:53]</td><td class="supply-col">[27/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:07]</td><td class="supply-col">[31/39]</td><td class="unit-col upgrade">Warp Gate Research</td></tr>
-<tr><td class="time-col">[05:16]</td><td class="supply-col">[31/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:16]</td><td class="supply-col">[31/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:42]</td><td class="supply-col">[33/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:42]</td><td class="supply-col">[33/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:46]</td><td class="supply-col">[33/39]</td><td class="unit-col building">Pylon</td></tr>
 <tr><td class="time-col">[05:50]</td><td class="supply-col">[33/39]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[05:50]</td><td class="supply-col">[33/39]</td><td class="unit-col unit">Adept</td></tr></table>
@@ -5827,13 +5606,7 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:54]</td><td class="supply-col">[28/39]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[04:54]</td><td class="supply-col">[28/39]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[04:57]</td><td class="supply-col">[28/39]</td><td class="unit-col building">Stargate</td></tr>
-<tr><td class="time-col">[04:58]</td><td class="supply-col">[28/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[04:58]</td><td class="supply-col">[28/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:22]</td><td class="supply-col">[33/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:22]</td><td class="supply-col">[33/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:34]</td><td class="supply-col">[33/39]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:45]</td><td class="supply-col">[33/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:45]</td><td class="supply-col">[33/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:47]</td><td class="supply-col">[33/39]</td><td class="unit-col unit">Stalker</td></tr>
 <tr><td class="time-col">[05:47]</td><td class="supply-col">[33/39]</td><td class="unit-col unit">Stalker</td></tr>
 <tr><td class="time-col">[05:56]</td><td class="supply-col">[34/39]</td><td class="unit-col building">Pylon</td></tr></table>
@@ -5874,13 +5647,7 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:13]</td><td class="supply-col">[27/31]</td><td class="unit-col building">Pylon</td></tr>
 <tr><td class="time-col">[04:50]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[04:51]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:51]</td><td class="supply-col">[27/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[04:51]</td><td class="supply-col">[27/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:15]</td><td class="supply-col">[31/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:15]</td><td class="supply-col">[31/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:34]</td><td class="supply-col">[31/39]</td><td class="unit-col upgrade">Warp Gate Research</td></tr>
-<tr><td class="time-col">[05:42]</td><td class="supply-col">[33/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:42]</td><td class="supply-col">[33/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:49]</td><td class="supply-col">[33/39]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[05:49]</td><td class="supply-col">[33/39]</td><td class="unit-col unit">Adept</td></tr></table>
     </div>
@@ -5922,15 +5689,9 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:29]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:51]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[04:51]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:54]</td><td class="supply-col">[30/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[04:54]</td><td class="supply-col">[30/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:00]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:19]</td><td class="supply-col">[34/39]</td><td class="unit-col building">Pylon</td></tr>
-<tr><td class="time-col">[05:24]</td><td class="supply-col">[35/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:24]</td><td class="supply-col">[35/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:34]</td><td class="supply-col">[35/39]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:49]</td><td class="supply-col">[35/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:49]</td><td class="supply-col">[35/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:52]</td><td class="supply-col">[38/39]</td><td class="unit-col unit">Stalker</td></tr>
 <tr><td class="time-col">[05:55]</td><td class="supply-col">[38/39]</td><td class="unit-col unit">Stalker</td></tr></table>
     </div>
@@ -5985,7 +5746,8 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[05:33]</td><td class="supply-col">[31/39]</td><td class="unit-col building">Robotics Facility</td></tr>
 <tr><td class="time-col">[05:41]</td><td class="supply-col">[31/39]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:41]</td><td class="supply-col">[31/39]</td><td class="unit-col building">Pylon</td></tr>
-<tr><td class="time-col">[05:55]</td><td class="supply-col">[31/39]</td><td class="unit-col unit">Phoenix</td></tr></table>
+<tr><td class="time-col">[05:55]</td><td class="supply-col">[31/39]</td><td class="unit-col unit">Phoenix</td></tr>
+<tr><td class="time-col">[05:55]</td><td class="supply-col">[31/39]</td><td class="unit-col ability">Sentry Hallucination (Phoenix)</td></tr></table>
     </div>
   </details>
 </div>
@@ -6025,15 +5787,9 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:35]</td><td class="supply-col">[29/31]</td><td class="unit-col building">Pylon</td></tr>
 <tr><td class="time-col">[04:55]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[04:55]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:57]</td><td class="supply-col">[30/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[04:57]</td><td class="supply-col">[30/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[04:57]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:20]</td><td class="supply-col">[35/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:20]</td><td class="supply-col">[35/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:27]</td><td class="supply-col">[34/39]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:50]</td><td class="supply-col">[35/39]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:52]</td><td class="supply-col">[35/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:52]</td><td class="supply-col">[35/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:54]</td><td class="supply-col">[35/39]</td><td class="unit-col unit">Stalker</td></tr>
 <tr><td class="time-col">[05:54]</td><td class="supply-col">[35/39]</td><td class="unit-col unit">Stalker</td></tr>
 <tr><td class="time-col">[05:56]</td><td class="supply-col">[35/39]</td><td class="unit-col building">Nexus</td></tr>
@@ -6303,14 +6059,11 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:45]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Stalker</td></tr>
 <tr><td class="time-col">[05:00]</td><td class="supply-col">[31/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:04]</td><td class="supply-col">[31/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:05]</td><td class="supply-col">[31/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:24]</td><td class="supply-col">[34/39]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:30]</td><td class="supply-col">[34/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:33]</td><td class="supply-col">[34/39]</td><td class="unit-col building">Nexus</td></tr>
 <tr><td class="time-col">[05:33]</td><td class="supply-col">[34/39]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[05:47]</td><td class="supply-col">[33/39]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:49]</td><td class="supply-col">[33/39]</td><td class="unit-col unit">Sentry</td></tr>
-<tr><td class="time-col">[05:53]</td><td class="supply-col">[34/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr></table>
     </div>
   </details>
 </div></div>
@@ -6436,13 +6189,9 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:40]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:58]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[04:58]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:00]</td><td class="supply-col">[28/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:00]</td><td class="supply-col">[28/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:51]</td><td class="supply-col">[30/39]</td><td class="unit-col upgrade">Warp Gate Research</td></tr>
 <tr><td class="time-col">[05:55]</td><td class="supply-col">[30/39]</td><td class="unit-col unit">Stalker</td></tr>
 <tr><td class="time-col">[05:55]</td><td class="supply-col">[30/39]</td><td class="unit-col unit">Stalker</td></tr>
-<tr><td class="time-col">[05:55]</td><td class="supply-col">[30/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:55]</td><td class="supply-col">[30/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr></table>
     </div>
   </details>
 </div>
@@ -6557,15 +6306,9 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:05]</td><td class="supply-col">[23/31]</td><td class="unit-col building">Twilight Council</td></tr>
 <tr><td class="time-col">[04:57]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[04:58]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:00]</td><td class="supply-col">[27/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:00]</td><td class="supply-col">[27/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:12]</td><td class="supply-col">[31/31]</td><td class="unit-col building">Pylon</td></tr>
-<tr><td class="time-col">[05:23]</td><td class="supply-col">[31/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:23]</td><td class="supply-col">[31/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:48]</td><td class="supply-col">[31/31]</td><td class="unit-col building">Shield Battery</td></tr>
 <tr><td class="time-col">[05:51]</td><td class="supply-col">[31/39]</td><td class="unit-col unit">Stalker</td></tr>
-<tr><td class="time-col">[05:51]</td><td class="supply-col">[31/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:51]</td><td class="supply-col">[31/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:51]</td><td class="supply-col">[31/39]</td><td class="unit-col unit">Stalker</td></tr></table>
     </div>
   </details>
@@ -6607,8 +6350,6 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[05:35]</td><td class="supply-col">[31/39]</td><td class="unit-col upgrade">Warp Gate Research</td></tr>
 <tr><td class="time-col">[05:50]</td><td class="supply-col">[31/39]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[05:50]</td><td class="supply-col">[31/39]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:57]</td><td class="supply-col">[31/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:57]</td><td class="supply-col">[31/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr></table>
     </div>
   </details>
 </div></div>
@@ -6653,7 +6394,6 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[03:55]</td><td class="supply-col">[23/31]</td><td class="unit-col building">Robotics Facility</td></tr>
 <tr><td class="time-col">[04:14]</td><td class="supply-col">[27/31]</td><td class="unit-col building">Pylon</td></tr>
 <tr><td class="time-col">[04:57]</td><td class="supply-col">[27/39]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:59]</td><td class="supply-col">[27/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:00]</td><td class="supply-col">[27/39]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[05:40]</td><td class="supply-col">[32/39]</td><td class="unit-col upgrade">Warp Gate Research</td></tr>
 <tr><td class="time-col">[05:50]</td><td class="supply-col">[32/39]</td><td class="unit-col unit">Stalker</td></tr>
@@ -6696,8 +6436,6 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:13]</td><td class="supply-col">[27/31]</td><td class="unit-col building">Pylon</td></tr>
 <tr><td class="time-col">[04:58]</td><td class="supply-col">[27/39]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[04:59]</td><td class="supply-col">[27/39]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:01]</td><td class="supply-col">[27/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:01]</td><td class="supply-col">[27/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:36]</td><td class="supply-col">[35/39]</td><td class="unit-col upgrade">Warp Gate Research</td></tr>
 <tr><td class="time-col">[05:50]</td><td class="supply-col">[35/39]</td><td class="unit-col building">Pylon</td></tr>
 <tr><td class="time-col">[05:57]</td><td class="supply-col">[35/39]</td><td class="unit-col unit">Adept</td></tr>
@@ -6739,13 +6477,9 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:15]</td><td class="supply-col">[27/31]</td><td class="unit-col building">Pylon</td></tr>
 <tr><td class="time-col">[04:56]</td><td class="supply-col">[27/39]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[04:58]</td><td class="supply-col">[27/39]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:01]</td><td class="supply-col">[27/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:01]</td><td class="supply-col">[27/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:50]</td><td class="supply-col">[35/39]</td><td class="unit-col unit">Stalker</td></tr>
 <tr><td class="time-col">[05:51]</td><td class="supply-col">[35/39]</td><td class="unit-col building">Pylon</td></tr>
 <tr><td class="time-col">[05:51]</td><td class="supply-col">[35/39]</td><td class="unit-col unit">Stalker</td></tr>
-<tr><td class="time-col">[05:54]</td><td class="supply-col">[35/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:54]</td><td class="supply-col">[35/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:57]</td><td class="supply-col">[35/39]</td><td class="unit-col building">Shield Battery</td></tr></table>
     </div>
   </details>
@@ -6878,11 +6612,7 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:26]</td><td class="supply-col">[28/31]</td><td class="unit-col building">Pylon</td></tr>
 <tr><td class="time-col">[05:07]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[05:08]</td><td class="supply-col">[30/39]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:10]</td><td class="supply-col">[30/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:10]</td><td class="supply-col">[30/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:39]</td><td class="supply-col">[35/39]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:42]</td><td class="supply-col">[35/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:42]</td><td class="supply-col">[35/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:52]</td><td class="supply-col">[37/39]</td><td class="unit-col building">Pylon</td></tr></table>
     </div>
   </details>
@@ -7104,10 +6834,7 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:49]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[04:50]</td><td class="supply-col">[27/31]</td><td class="unit-col building">Pylon</td></tr>
 <tr><td class="time-col">[04:52]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:55]</td><td class="supply-col">[29/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:23]</td><td class="supply-col">[29/39]</td><td class="unit-col building">Pylon</td></tr>
-<tr><td class="time-col">[05:32]</td><td class="supply-col">[29/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:32]</td><td class="supply-col">[29/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:52]</td><td class="supply-col">[31/39]</td><td class="unit-col unit">Sentry</td></tr>
 <tr><td class="time-col">[05:57]</td><td class="supply-col">[31/39]</td><td class="unit-col building">Shield Battery</td></tr></table>
     </div>
@@ -7147,13 +6874,7 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:22]</td><td class="supply-col">[27/31]</td><td class="unit-col building">Pylon</td></tr>
 <tr><td class="time-col">[04:58]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[04:58]</td><td class="supply-col">[27/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:00]</td><td class="supply-col">[27/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:00]</td><td class="supply-col">[27/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:30]</td><td class="supply-col">[31/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:30]</td><td class="supply-col">[31/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:41]</td><td class="supply-col">[33/39]</td><td class="unit-col building">Pylon</td></tr>
-<tr><td class="time-col">[05:53]</td><td class="supply-col">[33/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:53]</td><td class="supply-col">[33/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:57]</td><td class="supply-col">[33/39]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[05:58]</td><td class="supply-col">[33/39]</td><td class="unit-col unit">Adept</td></tr></table>
     </div>
@@ -7236,13 +6957,10 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:48]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Stalker</td></tr>
 <tr><td class="time-col">[04:49]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:54]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:55]</td><td class="supply-col">[30/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:25]</td><td class="supply-col">[33/39]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:27]</td><td class="supply-col">[33/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:37]</td><td class="supply-col">[33/39]</td><td class="unit-col building">Pylon</td></tr>
 <tr><td class="time-col">[05:38]</td><td class="supply-col">[33/39]</td><td class="unit-col upgrade">Warp Gate Research</td></tr>
 <tr><td class="time-col">[05:44]</td><td class="supply-col">[33/39]</td><td class="unit-col unit">Stalker</td></tr>
-<tr><td class="time-col">[05:50]</td><td class="supply-col">[33/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:53]</td><td class="supply-col">[33/39]</td><td class="unit-col unit">Stalker</td></tr></table>
     </div>
   </details>
@@ -7331,14 +7049,11 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:10]</td><td class="supply-col">[24/31]</td><td class="unit-col building">Pylon</td></tr>
 <tr><td class="time-col">[04:44]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Sentry</td></tr>
 <tr><td class="time-col">[04:57]</td><td class="supply-col">[30/39]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:59]</td><td class="supply-col">[30/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:20]</td><td class="supply-col">[32/39]</td><td class="unit-col building">Twilight Council</td></tr>
-<tr><td class="time-col">[05:28]</td><td class="supply-col">[33/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:38]</td><td class="supply-col">[33/39]</td><td class="unit-col unit">Stalker</td></tr>
 <tr><td class="time-col">[05:39]</td><td class="supply-col">[33/39]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:49]</td><td class="supply-col">[33/39]</td><td class="unit-col unit">Phoenix</td></tr>
 <tr><td class="time-col">[05:50]</td><td class="supply-col">[35/39]</td><td class="unit-col unit">Stalker</td></tr>
-<tr><td class="time-col">[05:57]</td><td class="supply-col">[35/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr></table>
     </div>
   </details>
 </div>
@@ -7500,6 +7215,7 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[03:42]</td><td class="supply-col">[23/23]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:18]</td><td class="supply-col">[28/31]</td><td class="unit-col building">Pylon</td></tr>
 <tr><td class="time-col">[04:26]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Probe</td></tr>
+<tr><td class="time-col">[04:42]</td><td class="supply-col">[29/31]</td><td class="unit-col ability">Sentry Hallucination (Phoenix)</td></tr>
 <tr><td class="time-col">[04:50]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Stalker</td></tr>
 <tr><td class="time-col">[04:51]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Stalker</td></tr>
 <tr><td class="time-col">[05:39]</td><td class="supply-col">[31/39]</td><td class="unit-col building">Nexus</td></tr>
@@ -7553,9 +7269,6 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:39]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Spray Protoss</td></tr>
 <tr><td class="time-col">[04:48]</td><td class="supply-col">[28/31]</td><td class="unit-col building">Pylon</td></tr>
 <tr><td class="time-col">[04:57]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:00]</td><td class="supply-col">[28/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:27]</td><td class="supply-col">[30/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:50]</td><td class="supply-col">[33/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:56]</td><td class="supply-col">[33/39]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:58]</td><td class="supply-col">[33/39]</td><td class="unit-col building">Shield Battery</td></tr></table>
     </div>
@@ -7642,8 +7355,6 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[05:02]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[05:14]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:23]</td><td class="supply-col">[29/39]</td><td class="unit-col unit">Stalker</td></tr>
-<tr><td class="time-col">[05:26]</td><td class="supply-col">[29/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:49]</td><td class="supply-col">[33/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:57]</td><td class="supply-col">[33/39]</td><td class="unit-col building">Nexus</td></tr>
 <tr><td class="time-col">[05:57]</td><td class="supply-col">[33/39]</td><td class="unit-col unit">Spray Protoss</td></tr></table>
     </div>
@@ -8087,14 +7798,8 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:47]</td><td class="supply-col">[28/31]</td><td class="unit-col building">Pylon</td></tr>
 <tr><td class="time-col">[04:58]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[05:01]</td><td class="supply-col">[28/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:09]</td><td class="supply-col">[30/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:09]</td><td class="supply-col">[30/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:33]</td><td class="supply-col">[32/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:33]</td><td class="supply-col">[32/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:54]</td><td class="supply-col">[36/39]</td><td class="unit-col unit">Stalker</td></tr>
 <tr><td class="time-col">[05:55]</td><td class="supply-col">[36/39]</td><td class="unit-col building">Pylon</td></tr>
-<tr><td class="time-col">[05:56]</td><td class="supply-col">[36/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:56]</td><td class="supply-col">[36/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr></table>
     </div>
   </details>
 </div>
@@ -8134,12 +7839,9 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:34]</td><td class="supply-col">[29/31]</td><td class="unit-col building">Pylon</td></tr>
 <tr><td class="time-col">[04:51]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Stalker</td></tr>
 <tr><td class="time-col">[04:57]</td><td class="supply-col">[29/39]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[04:59]</td><td class="supply-col">[29/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:19]</td><td class="supply-col">[30/39]</td><td class="unit-col unit">Probe</td></tr>
-<tr><td class="time-col">[05:24]</td><td class="supply-col">[34/47]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:42]</td><td class="supply-col">[34/47]</td><td class="unit-col building">Nexus</td></tr>
 <tr><td class="time-col">[05:42]</td><td class="supply-col">[34/47]</td><td class="unit-col unit">Spray Protoss</td></tr>
-<tr><td class="time-col">[05:52]</td><td class="supply-col">[34/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:57]</td><td class="supply-col">[34/39]</td><td class="unit-col building">Shield Battery</td></tr>
 <tr><td class="time-col">[05:59]</td><td class="supply-col">[34/39]</td><td class="unit-col unit">Sentry</td></tr></table>
     </div>
@@ -8181,12 +7883,9 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:42]</td><td class="supply-col">[29/31]</td><td class="unit-col building">Pylon</td></tr>
 <tr><td class="time-col">[04:50]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Stalker</td></tr>
 <tr><td class="time-col">[04:56]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:05]</td><td class="supply-col">[29/31]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:14]</td><td class="supply-col">[29/39]</td><td class="unit-col building">Stargate</td></tr>
-<tr><td class="time-col">[05:34]</td><td class="supply-col">[29/47]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:59]</td><td class="supply-col">[33/47]</td><td class="unit-col building">Nexus</td></tr>
 <tr><td class="time-col">[05:59]</td><td class="supply-col">[33/47]</td><td class="unit-col unit">Spray Protoss</td></tr>
-<tr><td class="time-col">[05:59]</td><td class="supply-col">[33/47]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr></table>
     </div>
   </details>
 </div>
@@ -8505,6 +8204,7 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:30]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:40]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Sentry</td></tr>
 <tr><td class="time-col">[04:42]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Phoenix</td></tr>
+<tr><td class="time-col">[04:42]</td><td class="supply-col">[30/31]</td><td class="unit-col ability">Sentry Hallucination (Phoenix)</td></tr>
 <tr><td class="time-col">[04:49]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Stalker</td></tr>
 <tr><td class="time-col">[04:58]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:25]</td><td class="supply-col">[34/39]</td><td class="unit-col building">Nexus</td></tr>
@@ -8550,6 +8250,7 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:29]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[04:39]</td><td class="supply-col">[29/31]</td><td class="unit-col unit">Sentry</td></tr>
 <tr><td class="time-col">[04:44]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Phoenix</td></tr>
+<tr><td class="time-col">[04:44]</td><td class="supply-col">[30/31]</td><td class="unit-col ability">Sentry Hallucination (Phoenix)</td></tr>
 <tr><td class="time-col">[04:48]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Stalker</td></tr>
 <tr><td class="time-col">[04:53]</td><td class="supply-col">[30/31]</td><td class="unit-col unit">Probe</td></tr>
 <tr><td class="time-col">[05:22]</td><td class="supply-col">[34/39]</td><td class="unit-col building">Nexus</td></tr>
@@ -8781,8 +8482,6 @@ details[open] > summary .expand-btn::after { content: '▲'; }
 <tr><td class="time-col">[04:55]</td><td class="supply-col">[29/39]</td><td class="unit-col upgrade">Warp Gate Research</td></tr>
 <tr><td class="time-col">[05:11]</td><td class="supply-col">[29/39]</td><td class="unit-col unit">Adept</td></tr>
 <tr><td class="time-col">[05:11]</td><td class="supply-col">[29/39]</td><td class="unit-col unit">Adept</td></tr>
-<tr><td class="time-col">[05:12]</td><td class="supply-col">[29/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
-<tr><td class="time-col">[05:12]</td><td class="supply-col">[29/39]</td><td class="unit-col upgrade">Adept Phase Shift</td></tr>
 <tr><td class="time-col">[05:49]</td><td class="supply-col">[33/39]</td><td class="unit-col building">Pylon</td></tr></table>
     </div>
   </details>
