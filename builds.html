@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HSC28 Protoss Build Orders</title>
+<style>
+  :root {
+    --bg: #1a1a2e;
+    --card: #16213e;
+    --border: #0f3460;
+    --text: #e0e0e0;
+    --muted: #8892a0;
+    --building: #4fc3f7;
+    --unit: #81c784;
+    --upgrade: #ffb74d;
+    --ability: #ce93d8;
+    --accent: #e94560;
+    --branch-line: #0f3460;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 2rem;
+    line-height: 1.5;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.3rem;
+    color: #fff;
+  }
+
+  .subtitle {
+    color: var(--muted);
+    margin-bottom: 2.5rem;
+    font-size: 0.95rem;
+  }
+
+  .matchup {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .matchup-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .matchup-header h2 {
+    font-size: 1.4rem;
+    color: #fff;
+  }
+
+  .matchup-header .game-count {
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  .matchup-desc {
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    max-width: 700px;
+  }
+
+  .section-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin-bottom: 0.6rem;
+  }
+
+  /* Opening sequence - vertical build order */
+  .build-order {
+    margin-bottom: 1.8rem;
+    font-size: 0.88rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .bo-row {
+    display: flex;
+    align-items: baseline;
+    padding: 0.2rem 0;
+    gap: 0.5rem;
+  }
+
+  .bo-time {
+    width: 3rem;
+    text-align: right;
+    color: var(--muted);
+    font-size: 0.82rem;
+    flex-shrink: 0;
+  }
+
+  .bo-supply {
+    width: 2.2rem;
+    text-align: right;
+    color: var(--muted);
+    font-size: 0.82rem;
+    flex-shrink: 0;
+  }
+
+  .bo-action {
+    font-weight: 500;
+  }
+
+  .bo-action.building { color: var(--building); }
+  .bo-action.unit { color: var(--unit); }
+  .bo-action.upgrade { color: var(--upgrade); }
+
+  /* Branch tree */
+  .branch-section {
+    margin-top: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .branch-tree {
+    margin-left: 0.5rem;
+    padding-left: 1.5rem;
+    border-left: 2px solid var(--branch-line);
+  }
+
+  .branch {
+    position: relative;
+    margin-bottom: 1rem;
+    padding-left: 1.2rem;
+  }
+
+  .branch::before {
+    content: '';
+    position: absolute;
+    left: -1.5rem;
+    top: 0.85rem;
+    width: 1.5rem;
+    height: 2px;
+    background: var(--branch-line);
+  }
+
+  .branch-header {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .branch-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  .branch-name.building { color: var(--building); }
+  .branch-name.unit { color: var(--unit); }
+  .branch-name.upgrade { color: var(--upgrade); }
+
+  .branch-bar-container {
+    flex: 1;
+    max-width: 200px;
+    height: 8px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .branch-bar {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.3s;
+  }
+
+  .branch-bar.building { background: var(--building); }
+  .branch-bar.unit { background: var(--unit); }
+  .branch-bar.upgrade { background: var(--upgrade); }
+  .branch-bar.neutral { background: var(--muted); }
+
+  .branch-stats {
+    font-size: 0.8rem;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .branch-detail {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin-top: 0.15rem;
+    padding-left: 0.2rem;
+  }
+
+  /* Sub-branches */
+  .sub-branch-tree {
+    margin-left: 0.5rem;
+    padding-left: 1.2rem;
+    border-left: 2px solid rgba(15, 52, 96, 0.6);
+    margin-top: 0.5rem;
+  }
+
+  .sub-branch {
+    position: relative;
+    margin-bottom: 0.6rem;
+    padding-left: 1rem;
+  }
+
+  .sub-branch::before {
+    content: '';
+    position: absolute;
+    left: -1.2rem;
+    top: 0.7rem;
+    width: 1.2rem;
+    height: 2px;
+    background: rgba(15, 52, 96, 0.6);
+  }
+
+  .sub-branch-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .sub-branch-name {
+    font-weight: 500;
+    font-size: 0.88rem;
+  }
+
+  .sub-branch-bar-container {
+    flex: 1;
+    max-width: 140px;
+    height: 6px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .sub-branch-bar {
+    height: 100%;
+    border-radius: 3px;
+  }
+
+  .legend {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    font-size: 0.82rem;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+  }
+
+  .legend-dot.building { background: var(--building); }
+  .legend-dot.unit { background: var(--unit); }
+  .legend-dot.upgrade { background: var(--upgrade); }
+</style>
+</head>
+<body>
+
+<h1>HSC28 Protoss Build Orders</h1>
+<p class="subtitle">175 build orders analyzed across 3 matchups. Data from HomeStory Cup XXVIII.</p>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot building"></div> Building</div>
+  <div class="legend-item"><div class="legend-dot unit"></div> Unit</div>
+  <div class="legend-item"><div class="legend-dot upgrade"></div> Upgrade</div>
+</div>
+
+<!-- PvT -->
+<div class="matchup">
+  <div class="matchup-header">
+    <h2>PvT</h2>
+    <span class="game-count">57 builds</span>
+  </div>
+  <p class="matchup-desc">
+    Highly converged meta. Nearly all builds open 1-Gate expand into Twilight Council with Blink, then add a Robotics Facility. Stargate openings are a clear minority.
+  </p>
+
+  <div class="section-label">Standard Opening (95%)</div>
+  <div class="build-order">
+    <div class="bo-row"><span class="bo-time">0:17</span><span class="bo-supply">14</span><span class="bo-action building">Pylon</span></div>
+    <div class="bo-row"><span class="bo-time">0:36</span><span class="bo-supply">15</span><span class="bo-action building">Gateway</span></div>
+    <div class="bo-row"><span class="bo-time">0:45</span><span class="bo-supply">16</span><span class="bo-action building">Assimilator</span></div>
+    <div class="bo-row"><span class="bo-time">1:22</span><span class="bo-supply">20</span><span class="bo-action building">Cybernetics Core / Nexus</span></div>
+    <div class="bo-row"><span class="bo-time">1:31</span><span class="bo-supply">20</span><span class="bo-action building">Nexus / Cybernetics Core</span></div>
+    <div class="bo-row"><span class="bo-time">1:44</span><span class="bo-supply">21</span><span class="bo-action building">Assimilator</span></div>
+    <div class="bo-row"><span class="bo-time">1:53</span><span class="bo-supply">22</span><span class="bo-action unit">Adept or Stalker</span></div>
+    <div class="bo-row"><span class="bo-time">2:04</span><span class="bo-supply">23</span><span class="bo-action upgrade">Warp Gate</span></div>
+  </div>
+
+  <div class="section-label">Branch 1 &mdash; First Tech</div>
+  <div class="branch-tree">
+    <div class="branch">
+      <div class="branch-header">
+        <span class="branch-name building">Twilight Council</span>
+        <div class="branch-bar-container"><div class="branch-bar building" style="width:83%"></div></div>
+        <span class="branch-stats">47 / 57 &middot; 83%</span>
+      </div>
+      <div class="branch-detail">Dominant choice. Nearly always followed by Blink research.</div>
+      <div class="sub-branch-tree">
+        <div class="sub-branch">
+          <div class="sub-branch-header">
+            <span class="sub-branch-name upgrade">Blink &rarr; Robo</span>
+            <div class="sub-branch-bar-container"><div class="sub-branch-bar" style="width:83%; background: var(--upgrade)"></div></div>
+            <span class="branch-stats">39 / 47 &middot; 83%</span>
+          </div>
+        </div>
+        <div class="sub-branch">
+          <div class="sub-branch-header">
+            <span class="sub-branch-name upgrade">Charge</span>
+            <div class="sub-branch-bar-container"><div class="sub-branch-bar" style="width:11%; background: var(--upgrade)"></div></div>
+            <span class="branch-stats">5 / 47 &middot; 11%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="branch">
+      <div class="branch-header">
+        <span class="branch-name building">Stargate</span>
+        <div class="branch-bar-container"><div class="branch-bar building" style="width:12%"></div></div>
+        <span class="branch-stats">7 / 57 &middot; 12%</span>
+      </div>
+      <div class="branch-detail">Phoenix harass into Twilight transition. Mostly ShoWTimE.</div>
+    </div>
+
+    <div class="branch">
+      <div class="branch-header">
+        <span class="branch-name building">Robotics Facility</span>
+        <div class="branch-bar-container"><div class="branch-bar building" style="width:4%"></div></div>
+        <span class="branch-stats">2 / 57 &middot; 4%</span>
+      </div>
+      <div class="branch-detail">Rare. Direct Robo for Observer / Immortal.</div>
+    </div>
+  </div>
+</div>
+
+<!-- PvZ -->
+<div class="matchup">
+  <div class="matchup-header">
+    <h2>PvZ</h2>
+    <span class="game-count">36 builds</span>
+  </div>
+  <p class="matchup-desc">
+    Stargate into Oracle is near-universal. The real decision point comes after the Oracle: which Twilight upgrade to research. This is the most evenly split branch in the data.
+  </p>
+
+  <div class="section-label">Standard Opening (86%)</div>
+  <div class="build-order">
+    <div class="bo-row"><span class="bo-time">0:19</span><span class="bo-supply">14</span><span class="bo-action building">Pylon</span></div>
+    <div class="bo-row"><span class="bo-time">0:38</span><span class="bo-supply">15</span><span class="bo-action building">Gateway</span></div>
+    <div class="bo-row"><span class="bo-time">0:47</span><span class="bo-supply">16</span><span class="bo-action building">Assimilator</span></div>
+    <div class="bo-row"><span class="bo-time">1:24</span><span class="bo-supply">20</span><span class="bo-action building">Nexus</span></div>
+    <div class="bo-row"><span class="bo-time">1:33</span><span class="bo-supply">20</span><span class="bo-action building">Cybernetics Core</span></div>
+    <div class="bo-row"><span class="bo-time">1:41</span><span class="bo-supply">21</span><span class="bo-action building">Assimilator</span></div>
+    <div class="bo-row"><span class="bo-time">2:01</span><span class="bo-supply">22</span><span class="bo-action unit">Adept</span></div>
+    <div class="bo-row"><span class="bo-time">2:16</span><span class="bo-supply">26</span><span class="bo-action upgrade">Warp Gate</span></div>
+  </div>
+
+  <div class="section-label">Branch 1 &mdash; First Tech</div>
+  <div class="branch-tree">
+    <div class="branch">
+      <div class="branch-header">
+        <span class="branch-name building">Stargate</span>
+        <div class="branch-bar-container"><div class="branch-bar building" style="width:78%"></div></div>
+        <span class="branch-stats">28 / 36 &middot; 78%</span>
+      </div>
+      <div class="branch-detail">Nearly always Oracle first (96%). 1&ndash;2 Oracles then transition to Twilight Council.</div>
+      <div class="sub-branch-tree">
+        <div class="section-label" style="margin-top:0.5rem">After Oracle &rarr; Twilight Council (21 builds)</div>
+        <div class="sub-branch">
+          <div class="sub-branch-header">
+            <span class="sub-branch-name upgrade">Blink</span>
+            <div class="sub-branch-bar-container"><div class="sub-branch-bar" style="width:43%; background: var(--upgrade)"></div></div>
+            <span class="branch-stats">9 / 21 &middot; 43%</span>
+          </div>
+        </div>
+        <div class="sub-branch">
+          <div class="sub-branch-header">
+            <span class="sub-branch-name upgrade">Resonating Glaives</span>
+            <div class="sub-branch-bar-container"><div class="sub-branch-bar" style="width:29%; background: var(--upgrade)"></div></div>
+            <span class="branch-stats">6 / 21 &middot; 29%</span>
+          </div>
+        </div>
+        <div class="sub-branch">
+          <div class="sub-branch-header">
+            <span class="sub-branch-name upgrade">Charge</span>
+            <div class="sub-branch-bar-container"><div class="sub-branch-bar" style="width:24%; background: var(--upgrade)"></div></div>
+            <span class="branch-stats">5 / 21 &middot; 24%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="branch">
+      <div class="branch-header">
+        <span class="branch-name building">Twilight Council</span>
+        <div class="branch-bar-container"><div class="branch-bar building" style="width:11%"></div></div>
+        <span class="branch-stats">4 / 36 &middot; 11%</span>
+      </div>
+      <div class="branch-detail">Skipping Stargate. Blink or Glaives pressure.</div>
+    </div>
+
+    <div class="branch">
+      <div class="branch-header">
+        <span class="branch-name building">Forge</span>
+        <div class="branch-bar-container"><div class="branch-bar building" style="width:8%"></div></div>
+        <span class="branch-stats">3 / 36 &middot; 8%</span>
+      </div>
+      <div class="branch-detail">Forge-first for +1 weapons or cannon defense. Rare / situational.</div>
+    </div>
+  </div>
+</div>
+
+<!-- PvP -->
+<div class="matchup">
+  <div class="matchup-header">
+    <h2>PvP</h2>
+    <span class="game-count">82 builds</span>
+  </div>
+  <p class="matchup-desc">
+    The most aggressive and diverse matchup. Universal 2-Gate opening with double gas, then a genuine three-way tech split. Many games end before a second tech building.
+  </p>
+
+  <div class="section-label">Standard Opening (91%)</div>
+  <div class="build-order">
+    <div class="bo-row"><span class="bo-time">0:17</span><span class="bo-supply">14</span><span class="bo-action building">Pylon</span></div>
+    <div class="bo-row"><span class="bo-time">0:36</span><span class="bo-supply">15</span><span class="bo-action building">Gateway</span></div>
+    <div class="bo-row"><span class="bo-time">0:46</span><span class="bo-supply">16</span><span class="bo-action building">Assimilator</span></div>
+    <div class="bo-row"><span class="bo-time">0:54</span><span class="bo-supply">17</span><span class="bo-action building">Assimilator</span></div>
+    <div class="bo-row"><span class="bo-time">1:07</span><span class="bo-supply">19</span><span class="bo-action building">Gateway</span></div>
+    <div class="bo-row"><span class="bo-time">1:24</span><span class="bo-supply">20</span><span class="bo-action building">Cybernetics Core</span></div>
+    <div class="bo-row"><span class="bo-time">1:58</span><span class="bo-supply">23</span><span class="bo-action unit">Stalker / Adept</span></div>
+    <div class="bo-row"><span class="bo-time">2:00</span><span class="bo-supply">24</span><span class="bo-action unit">Stalker / Adept</span></div>
+    <div class="bo-row"><span class="bo-time">2:02</span><span class="bo-supply">24</span><span class="bo-action upgrade">Warp Gate</span></div>
+  </div>
+
+  <div class="section-label">Branch 1 &mdash; First Tech</div>
+  <div class="branch-tree">
+    <div class="branch">
+      <div class="branch-header">
+        <span class="branch-name building">Robotics Facility</span>
+        <div class="branch-bar-container"><div class="branch-bar building" style="width:42%"></div></div>
+        <span class="branch-stats">34 / 82 &middot; 42%</span>
+      </div>
+      <div class="branch-detail">Most popular. Provides Immortals for defense or Warp Prism for aggression.</div>
+      <div class="sub-branch-tree">
+        <div class="sub-branch">
+          <div class="sub-branch-header">
+            <span class="sub-branch-name unit">Immortal</span>
+            <div class="sub-branch-bar-container"><div class="sub-branch-bar" style="width:56%; background: var(--unit)"></div></div>
+            <span class="branch-stats">19 / 34 &middot; 56%</span>
+          </div>
+        </div>
+        <div class="sub-branch">
+          <div class="sub-branch-header">
+            <span class="sub-branch-name unit">Warp Prism</span>
+            <div class="sub-branch-bar-container"><div class="sub-branch-bar" style="width:41%; background: var(--unit)"></div></div>
+            <span class="branch-stats">14 / 34 &middot; 41%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="branch">
+      <div class="branch-header">
+        <span class="branch-name building">Twilight Council</span>
+        <div class="branch-bar-container"><div class="branch-bar building" style="width:34%"></div></div>
+        <span class="branch-stats">28 / 82 &middot; 34%</span>
+      </div>
+      <div class="branch-detail">Aggressive tech. Often leads to Blink Stalker all-ins or DT play. 39% of these games end before a second tech.</div>
+    </div>
+
+    <div class="branch">
+      <div class="branch-header">
+        <span class="branch-name building">Stargate</span>
+        <div class="branch-bar-container"><div class="branch-bar building" style="width:20%"></div></div>
+        <span class="branch-stats">16 / 82 &middot; 20%</span>
+      </div>
+      <div class="branch-detail">Oracle for revelation / harassment (88%). Transitions into Twilight or Robo.</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
