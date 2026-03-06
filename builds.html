@@ -119,6 +119,10 @@
   .bo-action.unit { color: var(--unit); }
   .bo-action.upgrade { color: var(--upgrade); }
 
+  .branch .build-order {
+    margin: 0.4rem 0 0.2rem 0;
+  }
+
   /* Branch tree */
   .branch-section {
     margin-top: 1.2rem;
@@ -310,23 +314,13 @@
         <div class="branch-bar-container"><div class="branch-bar building" style="width:83%"></div></div>
         <span class="branch-stats">47 / 57 &middot; 83%</span>
       </div>
-      <div class="branch-detail">Dominant choice. Nearly always followed by Blink research.</div>
-      <div class="sub-branch-tree">
-        <div class="sub-branch">
-          <div class="sub-branch-header">
-            <span class="sub-branch-name upgrade">Blink &rarr; Robo</span>
-            <div class="sub-branch-bar-container"><div class="sub-branch-bar" style="width:83%; background: var(--upgrade)"></div></div>
-            <span class="branch-stats">39 / 47 &middot; 83%</span>
-          </div>
-        </div>
-        <div class="sub-branch">
-          <div class="sub-branch-header">
-            <span class="sub-branch-name upgrade">Charge</span>
-            <div class="sub-branch-bar-container"><div class="sub-branch-bar" style="width:11%; background: var(--upgrade)"></div></div>
-            <span class="branch-stats">5 / 47 &middot; 11%</span>
-          </div>
-        </div>
+      <div class="build-order">
+        <div class="bo-row"><span class="bo-time">2:30</span><span class="bo-supply">28</span><span class="bo-action building">Twilight Council</span></div>
+        <div class="bo-row"><span class="bo-time">2:52</span><span class="bo-supply">33</span><span class="bo-action upgrade">Blink</span></div>
+        <div class="bo-row"><span class="bo-time">3:02</span><span class="bo-supply">35</span><span class="bo-action building">Gateway &times;2</span></div>
+        <div class="bo-row"><span class="bo-time">3:38</span><span class="bo-supply">42</span><span class="bo-action building">Robotics Facility</span></div>
       </div>
+      <div class="branch-detail">The standard PvT. Blink Stalkers into Robo for Observers/Immortals. 66% eventually add Charge too.</div>
     </div>
 
     <div class="branch">
@@ -334,6 +328,11 @@
         <span class="branch-name building">Stargate</span>
         <div class="branch-bar-container"><div class="branch-bar building" style="width:12%"></div></div>
         <span class="branch-stats">7 / 57 &middot; 12%</span>
+      </div>
+      <div class="build-order">
+        <div class="bo-row"><span class="bo-time">2:16</span><span class="bo-supply">25</span><span class="bo-action building">Stargate</span></div>
+        <div class="bo-row"><span class="bo-time">2:58</span><span class="bo-supply">35</span><span class="bo-action unit">Phoenix</span></div>
+        <div class="bo-row"><span class="bo-time">3:10</span><span class="bo-supply">37</span><span class="bo-action building">Gateway &times;2</span></div>
       </div>
       <div class="branch-detail">Phoenix harass into Twilight transition. Mostly ShoWTimE.</div>
     </div>
@@ -379,15 +378,20 @@
         <div class="branch-bar-container"><div class="branch-bar building" style="width:78%"></div></div>
         <span class="branch-stats">28 / 36 &middot; 78%</span>
       </div>
-      <div class="branch-detail">Nearly always Oracle first (96%). 1&ndash;2 Oracles then transition to Twilight Council.</div>
+      <div class="build-order">
+        <div class="bo-row"><span class="bo-time">2:22</span><span class="bo-supply">26</span><span class="bo-action building">Stargate</span></div>
+        <div class="bo-row"><span class="bo-time">3:00</span><span class="bo-supply">35</span><span class="bo-action unit">Oracle</span></div>
+        <div class="bo-row"><span class="bo-time">4:13</span><span class="bo-supply">52</span><span class="bo-action building">Twilight Council</span></div>
+      </div>
+      <div class="branch-detail">1&ndash;2 Oracles for harassment/revelation, then Twilight. The most evenly split branch point in the data:</div>
       <div class="sub-branch-tree">
-        <div class="section-label" style="margin-top:0.5rem">After Oracle &rarr; Twilight Council (21 builds)</div>
         <div class="sub-branch">
           <div class="sub-branch-header">
             <span class="sub-branch-name upgrade">Blink</span>
             <div class="sub-branch-bar-container"><div class="sub-branch-bar" style="width:43%; background: var(--upgrade)"></div></div>
             <span class="branch-stats">9 / 21 &middot; 43%</span>
           </div>
+          <div class="branch-detail" style="padding-left:0.2rem; font-size:0.8rem">~4:40 @ 54 supply</div>
         </div>
         <div class="sub-branch">
           <div class="sub-branch-header">
@@ -395,6 +399,7 @@
             <div class="sub-branch-bar-container"><div class="sub-branch-bar" style="width:29%; background: var(--upgrade)"></div></div>
             <span class="branch-stats">6 / 21 &middot; 29%</span>
           </div>
+          <div class="branch-detail" style="padding-left:0.2rem; font-size:0.8rem">~4:12 @ 50 supply</div>
         </div>
         <div class="sub-branch">
           <div class="sub-branch-header">
@@ -402,6 +407,7 @@
             <div class="sub-branch-bar-container"><div class="sub-branch-bar" style="width:24%; background: var(--upgrade)"></div></div>
             <span class="branch-stats">5 / 21 &middot; 24%</span>
           </div>
+          <div class="branch-detail" style="padding-left:0.2rem; font-size:0.8rem">~5:12 @ 62 supply</div>
         </div>
       </div>
     </div>
@@ -457,7 +463,10 @@
         <div class="branch-bar-container"><div class="branch-bar building" style="width:42%"></div></div>
         <span class="branch-stats">34 / 82 &middot; 42%</span>
       </div>
-      <div class="branch-detail">Most popular. Provides Immortals for defense or Warp Prism for aggression.</div>
+      <div class="build-order">
+        <div class="bo-row"><span class="bo-time">2:21</span><span class="bo-supply">28</span><span class="bo-action building">Robotics Facility</span></div>
+      </div>
+      <div class="branch-detail">First Robo unit is the key decision:</div>
       <div class="sub-branch-tree">
         <div class="sub-branch">
           <div class="sub-branch-header">
@@ -465,6 +474,7 @@
             <div class="sub-branch-bar-container"><div class="sub-branch-bar" style="width:56%; background: var(--unit)"></div></div>
             <span class="branch-stats">19 / 34 &middot; 56%</span>
           </div>
+          <div class="branch-detail" style="padding-left:0.2rem; font-size:0.8rem">~3:17 @ 37 supply. Defensive, hold position.</div>
         </div>
         <div class="sub-branch">
           <div class="sub-branch-header">
@@ -472,6 +482,7 @@
             <div class="sub-branch-bar-container"><div class="sub-branch-bar" style="width:41%; background: var(--unit)"></div></div>
             <span class="branch-stats">14 / 34 &middot; 41%</span>
           </div>
+          <div class="branch-detail" style="padding-left:0.2rem; font-size:0.8rem">~2:44 @ 33 supply. Aggressive warp-in play.</div>
         </div>
       </div>
     </div>
@@ -482,7 +493,11 @@
         <div class="branch-bar-container"><div class="branch-bar building" style="width:34%"></div></div>
         <span class="branch-stats">28 / 82 &middot; 34%</span>
       </div>
-      <div class="branch-detail">Aggressive tech. Often leads to Blink Stalker all-ins or DT play. 39% of these games end before a second tech.</div>
+      <div class="build-order">
+        <div class="bo-row"><span class="bo-time">3:08</span><span class="bo-supply">35</span><span class="bo-action building">Twilight Council</span></div>
+        <div class="bo-row"><span class="bo-time">3:45</span><span class="bo-supply">38</span><span class="bo-action upgrade">Blink</span></div>
+      </div>
+      <div class="branch-detail">Blink Stalker aggression. 39% of these games end before a second tech building.</div>
     </div>
 
     <div class="branch">
@@ -491,7 +506,11 @@
         <div class="branch-bar-container"><div class="branch-bar building" style="width:20%"></div></div>
         <span class="branch-stats">16 / 82 &middot; 20%</span>
       </div>
-      <div class="branch-detail">Oracle for revelation / harassment (88%). Transitions into Twilight or Robo.</div>
+      <div class="build-order">
+        <div class="bo-row"><span class="bo-time">2:23</span><span class="bo-supply">29</span><span class="bo-action building">Stargate</span></div>
+        <div class="bo-row"><span class="bo-time">2:56</span><span class="bo-supply">33</span><span class="bo-action unit">Oracle</span></div>
+      </div>
+      <div class="branch-detail">Oracle for revelation / harassment. Transitions into Twilight (44%) or Robo (31%).</div>
     </div>
   </div>
 </div>
